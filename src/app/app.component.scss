@@ -1,0 +1,24 @@
+@import '~@angular/material/theming';
+
+
+.main {
+    padding: 0 32px;
+}
+.header {
+    margin-bottom: 32px;
+    .mat-nav-list{
+        padding: 8px 32px;
+        background-color: indigo;
+        box-shadow: -1px 4px 2px #000000;
+        .mat-list-item.nav-link {
+            display: inline-block;
+            width: auto;
+            color: white;
+            margin-right: 8px;
+            &.active-link {
+                background-color: blueviolet;
+                border-radius: 4px;
+            }
+        }
+    }
+}

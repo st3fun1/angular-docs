@@ -1,0 +1,12 @@
+<header class="header">
+  <mat-nav-list>
+    <a class="nav-link" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:
+      link.href !== '/home'}" mat-list-item [routerLink]="link.href" *ngFor="let link of links"> {{link.name}} </a>
+ </mat-nav-list>
+</header>
+<main class="main">
+  <div [@routeAnimations]="prepareRoute(outlet)">
+    <router-outlet #outlet="outlet"></router-outlet>
+  </div>
+</main>
+<footer id="footer"></footer>
