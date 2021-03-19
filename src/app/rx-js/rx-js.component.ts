@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import Link from '../interfaces/Link';
 
 @Component({
   selector: 'app-rx-js',
@@ -6,6 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./rx-js.component.scss']
 })
 export class RxJSComponent implements OnInit {
+
+  links: Link[] = [
+    {
+      href: 'terms-and-syntax',
+      name: 'Terms and Syntax',
+      child: true
+    }
+  ];
 
   constructor() { }
 

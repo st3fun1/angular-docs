@@ -1,0 +1,120 @@
+<h2>
+    What is RxJS?
+</h2>
+<p>
+    Is a declarative programming paradigm concerned with data streams and the propagation of change.
+</p>
+<p>
+    Reactive programming is functional.
+</p>
+
+<h2>Reactive Development</h2>
+<ul>
+    <li>
+        Quick to react to user interactions
+    </li>
+    <li>
+        Resilient to failure. Good error handling
+    </li>
+    <li>
+        Reactive to state changes. Code watches for change events
+    </li>
+</ul>
+<mat-divider></mat-divider>
+<h2>
+    Data Stream
+</h2>
+<p>
+    Data is not continuous like an actual stream. You actually need to subscribe to the stream.
+</p>
+<mat-divider></mat-divider>
+<h2>Processing Observable Streams</h2>
+<ol>
+    <li>
+        <strong>Start the stream.</strong> Emit items into the stream.
+    </li>
+    <li>
+        Items pass through a set of operations.
+    </li>
+    <li>
+        As an <strong>observer</strong>:
+        <ul>
+            <li>Pick next item and process it</li>
+            <li>When an error occurs, handle it</li>
+            <li>When there's nothing left to process, you'll receive a notification that you're done</li>
+        </ul>
+    </li>
+    <li>
+        If you need to leave, stop the stream
+    </li>
+</ol>
+<mat-divider></mat-divider>
+<h2>
+    Processing Stream analogy
+</h2>
+<table>
+    <tr>
+        <td>
+           <strong>
+            Apple Factory
+           </strong>
+        </td>
+        <td>
+            <strong>
+                RxJS
+            </strong>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <strong>
+                Start the stream
+            </strong>
+            <div>
+                - Emits items
+            </div>
+        </td>
+        <td>
+            <strong>
+                Subscribe 
+            </strong>
+            <div>
+                - Emits items
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td><strong>Items pass through a set of operations</strong></td>
+        <td><strong>Pipe the data through a set of operators</strong></td>
+    </tr>
+    <tr>
+        <td>
+            <strong>
+                The apples are an observable. The factory worker is an observer
+            </strong>
+            <ul>
+                <li>Next item -> process it</li>
+                <li>Error occured -> handle it</li>
+                <li>Complete -> you're done</li>
+            </ul>
+        </td>
+        <td>
+            <strong>Observer</strong>
+            <ul>
+                <li>
+                    next()
+                </li>
+                <li>
+                    error()
+                </li>
+                <li>
+                    complete()
+                </li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <td><strong>Stop the stream</strong></td>
+        <td><strong>Unsubscribe</strong></td>
+    </tr>
+</table>

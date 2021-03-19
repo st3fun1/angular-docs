@@ -1,0 +1,19 @@
+<div class="container">
+    <ng-container *ngIf="panelList.length">
+        <mat-accordion class="accordion">
+            <mat-expansion-panel class="expansion-panel" *ngFor="let panel of panelList; index as i " (opened)="setPanelState(i, true)"
+                                 (closed)="setPanelState(i, false)">
+              <mat-expansion-panel-header>
+                <mat-panel-title class="panel-title">
+                        <h2>{{panel.title}}</h2>
+                </mat-panel-title>
+                <mat-panel-description>
+                    <h2>{{panel.description}}</h2>
+                </mat-panel-description>
+              </mat-expansion-panel-header>
+              <app-rxjs-terms-and-syntax-content [index]="i"></app-rxjs-terms-and-syntax-content>
+            </mat-expansion-panel>
+        </mat-accordion>    
+    </ng-container>
+    <div class="code-example"></div>
+</div>

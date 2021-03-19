@@ -1,0 +1,34 @@
+<ng-container [ngSwitch]="index">
+    <ng-container *ngSwitchCase="0">
+       <p>
+           <strong>
+            Observer
+           </strong> is an object that monitors a stream and responds to notifications represented as methods.   
+       </p>
+       <p>
+           It uses the following methods: .next(), .error(), .complete
+       </p>
+       <p>
+           An observer is a collection of callbacks that knows how to listen to values delivered by the Observable.
+       </p>
+       <mat-divider></mat-divider>
+       <p>
+         <strong>Subscriber</strong> is an observer which can unusbscribe from an Observable.
+       </p>
+    </ng-container>
+    <ng-container *ngSwitchCase="1">
+        <div>{{index}}</div>
+    </ng-container>
+    <ng-container *ngSwitchCase="2">
+        <div>{{index}}</div>
+    </ng-container>
+    <ng-container *ngSwitchCase="3">
+        <div>{{index}}</div>
+    </ng-container>
+    <ng-container *ngSwitchCase="4">
+        <div>{{index}}</div>
+    </ng-container>
+    <ng-container *ngSwitchCase="5">
+        <div>{{index}}</div>
+    </ng-container>
+</ng-container>

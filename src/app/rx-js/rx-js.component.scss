@@ -1,0 +1,26 @@
+.sub-navigation {
+  margin-bottom: 16px;
+}
+.list {
+  display: flex;
+  align-items: center;
+  height: 80px;
+
+  .subroute-link {
+    width: max-content;
+    background-color: indigo;
+    color: white;
+    border-radius: 6px;
+    margin-right: 8px;
+    transition: 0.35s all ease;
+    height: 60px;
+    &:hover {
+      background-color: blueviolet;
+    }
+    &.active-subroute {
+      background-color: blueviolet;
+      border: 4px solid indigo;
+      text-decoration: none;
+    }
+  }
+}
