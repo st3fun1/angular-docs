@@ -15,5 +15,7 @@
             </mat-expansion-panel>
         </mat-accordion>    
     </ng-container>
-    <div class="code-example"></div>
+    <div class="code-example">
+        <pre class="code-wrapper"><code class="code-text" [highlight]="code" (highlighted)="onHighlight($event)" [lineNumbers]="true"></code></pre>
+    </div>
 </div>

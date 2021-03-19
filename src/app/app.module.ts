@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { HighlightModule, HIGHLIGHT_OPTIONS } from 'ngx-highlightjs';
 import { AppRoutingModule } from './app-routing.module';
 import {MatListModule} from '@angular/material/list';
 import { AppComponent } from './app.component';
@@ -37,9 +38,17 @@ import { FooterComponent } from './footer/footer.component';
     BrowserAnimationsModule, 
     NoopAnimationsModule,
     MatExpansionModule, 
-    MatDividerModule
+    MatDividerModule,
+    HighlightModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HIGHLIGHT_OPTIONS,
+      useValue: {
+        fullLibraryLoader: () => import('highlight.js'),
+      }
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
