@@ -9,6 +9,7 @@ import { BrowserAnimationsModule, NoopAnimationsModule} from '@angular/platform-
 import { ObservablesComponent } from './observables/observables.component';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatExpansionModule} from '@angular/material/expansion';
+import {MatSelectModule} from '@angular/material/select';
 import { DependencyInjectionComponent } from './dependency-injection/dependency-injection.component';
 import { RxJSComponent } from './rx-js/rx-js.component';
 import { HomeComponent } from './home/home.component';
@@ -17,6 +18,8 @@ import { RxJsHomeComponent } from './rx-js-home/rx-js-home.component';
 import { RxJSTermsAndSyntaxComponent } from './rx-jsterms-and-syntax/rx-jsterms-and-syntax.component';
 import { RxjsTermsAndSyntaxContentComponent } from './rxjs-terms-and-syntax-content/rxjs-terms-and-syntax-content.component';
 import { FooterComponent } from './footer/footer.component';
+import { DemoComponent } from './demo/demo.component';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -29,7 +32,8 @@ import { FooterComponent } from './footer/footer.component';
     RxJsHomeComponent,
     RxJSTermsAndSyntaxComponent,
     RxjsTermsAndSyntaxContentComponent,
-    FooterComponent
+    FooterComponent,
+    DemoComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +43,9 @@ import { FooterComponent } from './footer/footer.component';
     NoopAnimationsModule,
     MatExpansionModule, 
     MatDividerModule,
-    HighlightModule
+    MatSelectModule,
+    HighlightModule,
+    CommonModule
   ],
   providers: [
     {

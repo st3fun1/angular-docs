@@ -1,7 +1,7 @@
 <div class="container">
     <ng-container *ngIf="panelList.length">
-        <mat-accordion class="accordion">
-            <mat-expansion-panel class="expansion-panel" *ngFor="let panel of panelList; index as i " (opened)="setPanelState(i, true)"
+        <mat-accordion class=" ">
+            <mat-expansion-panel [expanded]="getExpandedPanel(i).isOpen" class="expansion-panel" *ngFor="let panel of panelList; index as i " (opened)="setPanelState(i, true)"
                                  (closed)="setPanelState(i, false)">
               <mat-expansion-panel-header>
                 <mat-panel-title class="panel-title">
@@ -11,11 +11,11 @@
                     <h2>{{panel.description}}</h2>
                 </mat-panel-description>
               </mat-expansion-panel-header>
-              <app-rxjs-terms-and-syntax-content [index]="i"></app-rxjs-terms-and-syntax-content>
+              <app-rxjs-terms-and-syntax-content [key]="panel.key"></app-rxjs-terms-and-syntax-content>
             </mat-expansion-panel>
         </mat-accordion>    
     </ng-container>
     <div class="code-example">
-        <pre class="code-wrapper"><code class="code-text" [highlight]="code" (highlighted)="onHighlight($event)" [lineNumbers]="true"></code></pre>
+        <pre *ngIf="currentRxJsCode" class="code-wrapper"><code class="code-text" [highlight]="currentRxJsCode" (highlighted)="onHighlight($event)" [lineNumbers]="true"></code></pre>
     </div>
 </div>

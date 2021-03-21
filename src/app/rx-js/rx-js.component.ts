@@ -13,6 +13,11 @@ export class RxJSComponent implements OnInit {
       href: 'terms-and-syntax',
       name: 'Terms and Syntax',
       child: true
+    },
+    {
+      href: 'demo',
+      name: 'Demo',
+      child: true
     }
   ];
 

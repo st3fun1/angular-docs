@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Rxjscodeexample } from '../rxjscodeexample.enum';
 
 @Component({
   selector: 'app-rxjs-terms-and-syntax-content',
@@ -6,8 +7,8 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./rxjs-terms-and-syntax-content.component.scss']
 })
 export class RxjsTermsAndSyntaxContentComponent implements OnInit {
-
-  @Input() index: number = 0;
+  @Input() key?: Rxjscodeexample;
+  keys = Rxjscodeexample;
   
   constructor() { }
 

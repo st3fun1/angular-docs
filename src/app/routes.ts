@@ -6,6 +6,7 @@ import {  Routes } from '@angular/router';
 import { RxJSIntroComponent } from './rx-jsintro/rx-jsintro.component';
 import { RxJsHomeComponent } from './rx-js-home/rx-js-home.component';
 import { RxJSTermsAndSyntaxComponent } from './rx-jsterms-and-syntax/rx-jsterms-and-syntax.component';
+import { DemoComponent } from './demo/demo.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent, data: {animation: 'HomePage'}},
@@ -21,6 +22,11 @@ const routes: Routes = [
       {
           path: 'terms-and-syntax',
           component: RxJSTermsAndSyntaxComponent,
+          outlet: 'rxjsOutlet'
+      },
+      {
+          path: 'demo',
+          component: DemoComponent,
           outlet: 'rxjsOutlet'
       }
   ]},

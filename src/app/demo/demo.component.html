@@ -1,0 +1,11 @@
+<mat-form-field appearance="fill">
+    <mat-label>Choose a code demo</mat-label>
+    <mat-select (selectionChange)="onCodeDemoChange($event)" (openedChange)="onOpenedChange($event)">
+      <mat-option *ngFor="let codeDemo of codeDemos" [value]="codeDemo.option">{{codeDemo.name}}</mat-option>
+    </mat-select>
+</mat-form-field>
+<ul class="logs-container">
+    <li *ngFor="let log of logs">
+        {{log}}
+    </li>
+</ul>

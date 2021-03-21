@@ -1,5 +1,5 @@
-<ng-container [ngSwitch]="index">
-    <ng-container *ngSwitchCase="0">
+<ng-container [ngSwitch]="key">
+    <ng-container *ngSwitchCase="keys.OBSERVER">
        <p>
            <strong>
             Observer
@@ -11,24 +11,71 @@
        <p>
            An observer is a collection of callbacks that knows how to listen to values delivered by the Observable.
        </p>
-       <mat-divider></mat-divider>
        <p>
          <strong>Subscriber</strong> is an observer which can unusbscribe from an Observable.
        </p>
     </ng-container>
-    <ng-container *ngSwitchCase="1">
-        <div>{{index}}</div>
+    <ng-container *ngSwitchCase="keys.OBSERVABLE_STREAM">
+       <p>
+           An Observable stream is any stream of data produced(emited) overtime:
+       </p>
+       <ul>
+            <li>Numbers</li>
+            <li>Streams</li>
+            <li>Events</li>
+            <li>Http Response</li>
+            <li>Other Observable streams</li>
+        </ul>
+       <p>
+           Observables can be sync or async
+       </p>
+       <p>
+            Can emit a finite or infinite number of data
+       </p>
+       <p>
+           Observables are lazy and doesn't emit any data, until you subscribe to the stream
+       </p>
     </ng-container>
-    <ng-container *ngSwitchCase="2">
-        <div>{{index}}</div>
+    <ng-container *ngSwitchCase="keys.SUBSCRIPTION">
+        <p>To start start an Observable stream you must subscribe to it using <strong>.subscribe()</strong></p>
+        <p>When we subscribe we pass an onbserver to monitor a subscription.</p>
+        <p>As part of the subscription process, we tell the Observable how we gonna observe it.</p>
+        <p><strong>Observer</strong> - set  of callbacks to observe, handling next, error and complete</p>
+        <p><strong>Observable</strong> or stream is a sequence of emitted items</p>
     </ng-container>
-    <ng-container *ngSwitchCase="3">
-        <div>{{index}}</div>
+    <ng-container *ngSwitchCase="keys.UNSUBSCRIBE">
+        <h3>
+            Ways to stop an Observable Stream
+        </h3>
+        <ul>
+            <li>
+                Call <strong>complete</strong>
+            </li>
+            <li>
+                User completing operator which unsubscribe
+            </li>
+            <li>
+                Throw an error
+            </li>
+            <li>
+                Calling <strong>.unsubscribe</strong> on subscription
+            </li>
+        </ul>
+        <h3>Why should we do this?</h3>
+        <p>Unsubscribing from each Observable prevents memory leaks</p>
     </ng-container>
-    <ng-container *ngSwitchCase="4">
-        <div>{{index}}</div>
-    </ng-container>
-    <ng-container *ngSwitchCase="5">
-        <div>{{index}}</div>
+    <ng-container *ngSwitchCase="keys.CREATION_FN">
+        <h3>Creating an Observable</h3>
+        <p>One of the following creation functions can be used</p>
+        <ul>
+            <li><strong>.of</strong></li>
+            <li><strong>.from</strong></li>
+            <li><strong>.fromEvent</strong> creates an Observable from any DOM event</li>
+            <li><strong>.interval</strong> creates an Observable that emits a seq number at a defined interval of time</li>
+        </ul>
+        <h4><strong>.of</strong> vs <strong>.from</strong></h4>
+        <p>Given an array of data, the stream behaves the following: </p>
+        <p>.from takes each element in the structure and emits it</p>
+        <p>.of emits all the items in the structure as a whole</p>
     </ng-container>
 </ng-container>

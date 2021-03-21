@@ -9,6 +9,28 @@
 
 .container {
   display: flex;
+
+  .accordion {
+    flex-grow: 1;
+    @media (min-width: 0) {
+      flex-basis: 55%;
+      width: 55%;
+    }
+    @media (min-width: 960px) {
+      flex-basis: 60%;
+    }
+  }
+
+  .code-example {
+    flex-grow: 1;
+    @media (min-width: 0) {
+      flex-basis: 45%;
+      width: 45%;
+    }
+    @media (min-width: 960px) {
+      flex-basis: 40%;
+    }
+  }
 }
 
 .code-pre {

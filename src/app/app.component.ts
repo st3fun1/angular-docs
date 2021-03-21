@@ -24,7 +24,7 @@ export class AppComponent {
     {
       href: '/rxjs',
       name: 'RxJS'
-    }
+    },
   ]
 
   prepareRoute(outlet: RouterOutlet) {
