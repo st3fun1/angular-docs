@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Rxjscodeexample } from './rxjscodeexample.enum';
+import { Rxjscodeexample } from '../interfaces/rxjscodeexample.enum';
 
 @Injectable({
   providedIn: 'root'
@@ -72,7 +72,16 @@ export class RxJsCodeService {
 
       // interval
       const num = interval(1000).subscribe(console.log);
-  `
+  `,
+  [Rxjscodeexample.OPERATORS]: `
+      // source observable
+      of(2, 4, 6)
+      .pipe(
+        map(item => item * 2),
+        tap(item => console.log(item)),
+        take(2)
+      ).subscribe(console.log);
+    `
   }
 
   getCodeByKey(key: Rxjscodeexample): string{

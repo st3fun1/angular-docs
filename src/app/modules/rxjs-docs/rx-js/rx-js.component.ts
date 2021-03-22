@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import Link from '../interfaces/Link';
+import Link from '../../../interfaces/Link';
 
 @Component({
   selector: 'app-rx-js',

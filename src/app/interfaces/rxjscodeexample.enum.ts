@@ -3,5 +3,6 @@ export enum Rxjscodeexample {
     OBSERVABLE_STREAM,
     SUBSCRIPTION,
     UNSUBSCRIBE, 
-    CREATION_FN
+    CREATION_FN,
+    OPERATORS
 }

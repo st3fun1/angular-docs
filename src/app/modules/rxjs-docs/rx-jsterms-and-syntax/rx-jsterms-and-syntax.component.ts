@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { HighlightResult } from 'ngx-highlightjs';
-import { PanelItem } from '../panel-item';
-import { RxJsCodeService } from '../rx-js-code.service';
-import { Rxjscodeexample } from '../rxjscodeexample.enum';
+import { PanelItem } from '../../../interfaces/panel-item';
+import { RxJsCodeService } from '../../../services/rx-js-code.service';
+import { Rxjscodeexample } from '../../../interfaces/rxjscodeexample.enum';
 
 @Component({
   selector: 'app-rx-jsterms-and-syntax',
@@ -21,13 +21,11 @@ export class RxJSTermsAndSyntaxComponent implements OnInit {
     {
       isOpen: false,
       title: 'Observable stream',
-      description: 'the stream of data',
       key: Rxjscodeexample.OBSERVABLE_STREAM
     },
     {
       isOpen: false,
       title: 'Subscription',
-      description: 'Getting the data',
       key: Rxjscodeexample.SUBSCRIPTION
     },
     {
@@ -39,6 +37,11 @@ export class RxJSTermsAndSyntaxComponent implements OnInit {
       isOpen: false,
       title: 'Creation Functions',
       key: Rxjscodeexample.CREATION_FN
+    },
+    {
+      isOpen: false,
+      title: 'RxJS Operators',
+      key: Rxjscodeexample.OPERATORS
     }
   ];
 

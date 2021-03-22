@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { slideInAnimation } from '../animations';
+import { slideInAnimation } from '../../../shared/animations';
 
 @Component({
   selector: 'app-home',

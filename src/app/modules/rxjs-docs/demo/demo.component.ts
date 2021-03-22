@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { MatSelectChange } from '@angular/material/select';
-import { CodeDemoOptions } from '../code-demo';
-import { CodeDemoName } from '../code-demo-name.enum';
-import { LogServiceService } from '../log-service.service';
-import { RxJSCodeDemoRepoService } from '../rx-jscode-demo-repo.service';
+import { CodeDemoOptions } from '../../../interfaces/code-demo';
+import { CodeDemoName } from '../../../interfaces/code-demo-name.enum';
+import { LogServiceService } from '../../../services/log-service.service';
+import { RxJSCodeDemoRepoService } from '../../../services/rx-jscode-demo-repo.service';
 
 @Component({
   selector: 'app-demo',
@@ -19,6 +19,14 @@ export class DemoComponent implements OnInit {
     {
       name: 'from Creation Function',
       option: CodeDemoName.FROM
+    },
+    {
+      name: 'fromEvent Creation function',
+      option: CodeDemoName.FROM_EVENT
+    },
+    {
+      name: 'operators',
+      option: CodeDemoName.OPERATORS
     }
   ];
   logs: string[] = [];

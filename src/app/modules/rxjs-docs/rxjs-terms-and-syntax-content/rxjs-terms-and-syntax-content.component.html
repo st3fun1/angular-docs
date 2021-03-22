@@ -78,4 +78,44 @@
         <p>.from takes each element in the structure and emits it</p>
         <p>.of emits all the items in the structure as a whole</p>
     </ng-container>
+    <ng-container *ngSwitchCase="keys.OPERATORS">
+        <p>After emitting the items, they can pass through a set of operations.</p>
+        <p>The items are <strong>piped</strong> through a set of operators. You can use the <strong>.pipe</strong>Observable operator.</p>
+        <p>RxJS operator - function used to transform and manipulate items in an Observable stream.</p>
+        <p>Operators are applied in sequence using the Observable's pipe method.</p>
+        <p>Each operator takes an input Observable and ret urns an output Observable</p>
+        <h3>Operators list</h3>
+        <ul>
+            <li>
+                <h4>.map</h4>
+                <p>Transforms each emitted item. It's a transformat i on operat or</p>
+                <div><code>map(item => item * 2)</code></div>
+                <p>Used for making changes to each item in the source stream</p>
+                <mat-divider></mat-divider>
+            </li>
+            <li>
+                <h4>.tap</h4>
+                <p>Taps into a stream without modifying it. It is an utility operator.</p>
+                <p>It takes an input stream, subscribes to it and creates an output stream</p>
+                <div><code>tap(item => console.log(item))</code></div>
+                <p>Used for debugging or eprforming actions outside of the flow of data</p>
+            </li>
+            <li>
+                <h4>.take</h4>
+                <p>Emits a specified number of items. It is a filtering operator.</p>
+                <div><code>.take(2)</code></div>
+                <p>Used for taking a specified number of items and limiting unlimited streams</p>
+            </li>
+        </ul>
+        <h3>.map Operator Internals</h3>
+        <ul>
+            <li>It is a function</li>
+            <li>Takes an input stream</li>
+            <li>Creates an output stream via "Observable"</li>
+            <li>Subscribes to the input stream</li>
+            <li>Transforms item using provided "map" function and emits item</li>
+            <li>Emits error notification</li>
+            <li>Emits complete notification</li>
+        </ul>
+    </ng-container>
 </ng-container>

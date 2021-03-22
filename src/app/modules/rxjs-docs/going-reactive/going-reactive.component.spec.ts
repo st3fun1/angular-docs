@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RxJsHomeComponent } from './rx-js-home.component';
+import { GoingReactiveComponent } from './going-reactive.component';
 
-describe('RxJsHomeComponent', () => {
-  let component: RxJsHomeComponent;
-  let fixture: ComponentFixture<RxJsHomeComponent>;
+describe('GoingReactiveComponent', () => {
+  let component: GoingReactiveComponent;
+  let fixture: ComponentFixture<GoingReactiveComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ RxJsHomeComponent ]
+      declarations: [ GoingReactiveComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(RxJsHomeComponent);
+    fixture = TestBed.createComponent(GoingReactiveComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

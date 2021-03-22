@@ -14,14 +14,6 @@ export class AppComponent {
       name: 'Home'
     },
     {
-      href: '/observables',
-      name: 'Observables'
-    },
-    {
-      href: '/dependency-injection',
-      name: 'Dependency Injection'
-    },
-    {
       href: '/rxjs',
       name: 'RxJS'
     },

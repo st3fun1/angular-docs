@@ -2,38 +2,37 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { HighlightModule, HIGHLIGHT_OPTIONS } from 'ngx-highlightjs';
-import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule } from './modules/routing/app-routing.module';
+import { HttpClientModule } from '@angular/common/http';
 import {MatListModule} from '@angular/material/list';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule, NoopAnimationsModule} from '@angular/platform-browser/animations';
-import { ObservablesComponent } from './observables/observables.component';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatSelectModule} from '@angular/material/select';
-import { DependencyInjectionComponent } from './dependency-injection/dependency-injection.component';
-import { RxJSComponent } from './rx-js/rx-js.component';
-import { HomeComponent } from './home/home.component';
-import { RxJSIntroComponent } from './rx-jsintro/rx-jsintro.component';
-import { RxJsHomeComponent } from './rx-js-home/rx-js-home.component';
-import { RxJSTermsAndSyntaxComponent } from './rx-jsterms-and-syntax/rx-jsterms-and-syntax.component';
-import { RxjsTermsAndSyntaxContentComponent } from './rxjs-terms-and-syntax-content/rxjs-terms-and-syntax-content.component';
-import { FooterComponent } from './footer/footer.component';
-import { DemoComponent } from './demo/demo.component';
+import { RxJSComponent } from './modules/rxjs-docs/rx-js/rx-js.component';
+import { HomeComponent } from './modules/home/home/home.component';
+import { RxJSIntroComponent } from './modules/rxjs-docs/rx-jsintro/rx-jsintro.component';
+import { RxJSTermsAndSyntaxComponent } from './modules/rxjs-docs/rx-jsterms-and-syntax/rx-jsterms-and-syntax.component';
+import { RxjsTermsAndSyntaxContentComponent } from './modules/rxjs-docs/rxjs-terms-and-syntax-content/rxjs-terms-and-syntax-content.component';
+import { FooterComponent } from './modules/layout/footer/footer.component';
+import { DemoComponent } from './modules/rxjs-docs/demo/demo.component';
 import { CommonModule } from '@angular/common';
+import { GoingReactiveComponent } from './modules/rxjs-docs/going-reactive/going-reactive.component';
+import { NavigationComponent } from './modules/layout/navigation/navigation.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ObservablesComponent,
-    DependencyInjectionComponent,
     RxJSComponent,
     HomeComponent,
     RxJSIntroComponent,
-    RxJsHomeComponent,
     RxJSTermsAndSyntaxComponent,
     RxjsTermsAndSyntaxContentComponent,
     FooterComponent,
-    DemoComponent
+    DemoComponent,
+    GoingReactiveComponent,
+    NavigationComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +44,8 @@ import { CommonModule } from '@angular/common';
     MatDividerModule,
     MatSelectModule,
     HighlightModule,
-    CommonModule
+    CommonModule,
+    HttpClientModule
   ],
   providers: [
     {
