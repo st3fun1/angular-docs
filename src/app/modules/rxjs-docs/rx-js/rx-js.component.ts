@@ -15,6 +15,11 @@ export class RxJSComponent implements OnInit {
       child: true
     },
     {
+      href: 'going-reactive',
+      name: 'Going Reactive',
+      child: true
+    },
+    {
       href: 'demo',
       name: 'Demo',
       child: true

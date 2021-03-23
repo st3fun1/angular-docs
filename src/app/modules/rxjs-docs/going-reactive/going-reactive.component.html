@@ -1,1 +1,8 @@
-<p>going-reactive works!</p>
+<h2>List of photos</h2>
+<ul>
+    <li *ngFor="let item of photos$ | async">
+        <div>
+            {{item.albumId}}
+        </div>
+    </li>
+</ul>
