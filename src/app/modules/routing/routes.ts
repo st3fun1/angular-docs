@@ -42,7 +42,7 @@ const routes: Routes = [
   {
       path: 'going-reactive/data-retrieval-example/photo/:photoId',
       component: PhotoDetailComponent
-  },
+  }, 
   {
     path: 'going-reactive/combining-stream', 
     component: CombiningStreamsExampleComponent,
