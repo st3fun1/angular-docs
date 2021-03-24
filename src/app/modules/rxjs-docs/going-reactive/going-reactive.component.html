@@ -1,8 +1,169 @@
-<h2>List of photos</h2>
-<ul>
-    <li *ngFor="let item of photos$ | async">
-        <div>
-            {{item.albumId}}
-        </div>
-    </li>
-</ul>
+<h1>Going Reactive</h1>
+
+<mat-divider></mat-divider>
+<h2>Useful Reactive patterns</h2>
+<div class="docs-container">
+    <ol class="docs-list">
+        <li>
+            <h3 with-bold-text show-next-sibling>
+                <strong>async </strong>pipe
+            </h3>
+            <div class="section-details">
+                <p>
+                    when a new item is emitted, the component is marked to be checked for changes
+                </p>
+            </div>
+        </li>
+        <li>
+            <h3 with-bold-text show-next-sibling>
+                Handling Errors methods
+            </h3>
+            <div class="section-details">
+                <p>
+                    There are two techniques: catch and replace or catch and rethrow.
+                </p>
+                <p>
+                    <strong>.catchError(this.handleError)</strong> operator
+                </p>
+                <p>Used for catching errors and rethrowing errors or replace the errored Observable to continue</p>
+            </div>
+        </li>
+        <li>
+            <h3 with-bold-text show-next-sibling><strong>.throwError</strong> creation function</h3>
+             <div class="section-details">
+                <p>Creates an Observable of never, emits no value and never completes</p>
+                <p>used for intermediary error handling</p>
+                <p>Immediately emits an error notification</p>
+             </div>
+        </li>
+        <li>
+            <h3 with-bold-text show-next-sibling>EMPTY</h3>
+            <div class="section-details">
+                <p>Creates an Observable that emits no items</p>
+                <p>Immediately emits a complete notification</p>
+            </div>
+        </li>
+        <li>
+            <h3 with-bold-text show-next-sibling>Improving Change Detection</h3>
+            <div class="section-details">
+                <p>Angular uses <strong>change detection</strong> to track changes to application data structures, so it knows
+                    when to update the UI with changed data.</p>
+                    <h4>Change Detection Strategies</h4>
+                    <ul>
+                        <li>
+                            <h5>
+                                Default
+                            </h5>
+                            <p>Uses the default <i>checkAlways</i> strategy</p>
+                            <p>Every component is checked when: any change is detected</p>
+                        </li>
+                        <li>
+                            <h5>
+                                OnPush
+                            </h5>
+                            <p>Improves performance by minimizing change detection cycles</p>
+                            <p>The component is only checked when: </p>
+                            <ul>
+                                <li>
+                                    @Input properties change
+                                </li>
+                                <li>
+                                    Event emits
+                                </li>
+                                <li>
+                                    A bound Observable emits(using async pipe)
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+            </div>
+        </li>
+        <li>
+            <h3 with-bold-text show-next-sibling>Mapping returned data</h3>
+             <div class="section-details">
+                <h4>Why?</h4>
+                <ul>
+                    <li>modify a value</li>
+                    <li>change field names from BE</li>
+                    <li>transform a value, you need to type the result with <strong>as</strong></li>
+                    <li>add a calculated field</li>
+                </ul>
+             </div>
+        </li>
+        <li>
+            <h3 with-bold-text show-next-sibling>Combining streams</h3>
+             <div class="section-details">
+                 <h4>What you can do?</h4>
+                 <ul>
+                     <li>
+                         Combine streams(merge or concat) to a single stream
+                     </li>
+                     <li>
+                         It can flatten a higher-order Observables(mergeAll)
+                     </li>
+                     <li>
+                         It can emit a combined value(combineLatest, forkJoin, withLatestFrom)
+                         <ul>
+                             <li>
+                                <h5>combineLatest combination creation function</h5>
+                                <p>Creates an Observable whose values are defined using the <strong>
+                                    latest
+                                </strong> values from each input Observable</p>
+                                <p><code>combineLatest([a$, b$, c$]</code></p>
+                                <p>It is a static creation fn</p>
+                                <p>It takes the latest value from each stream</p>
+                                <p>Emitted value combines the latest emitted value from each input stream into an array</p>
+                                <mat-divider></mat-divider>
+                                <h5>Used for</h5>
+                                <ul>
+                                    <li>re-evaluate state when an action occurs</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <h5>forkjoin</h5>
+                                <p>Creates an Observable using the <strong>last</strong> value from each inputObservable</p>
+                                <p>
+                                    <code>forkJoin([$a, $b, $c])</code>
+                                </p>
+                                <p>When all input streams complete emits the value to the output stream and complets</p>
+                                <p>Each emitted values from each stream is combined into an array</p>
+                                <mat-divider></mat-divider>
+                                <h5>Used for</h5>
+                                <p>To wait to process any results until all streams are complete</p>
+                                <p>Shouldn't be used with streams that don't complete</p>
+                            </li>
+                            <li>
+                                <h5>withLatestFrom</h5>
+                                <p>Creates an Observalbe whose values are defined using the latest values from each input Onbservable but only when the <strong>
+                                    source
+                                </strong> stream emits.</p>
+                                <p><code>$a.pipe(withLatestFrom($b, c$))</code></p>
+                                <mat-divider></mat-divider>
+                                <h5>Used for</h5>
+                                <ul>
+                                    <li>To react to changes in only one stream</li>
+                                    <li>To regulate the output of the other streams </li>
+                                </ul>
+                            </li>
+                         </ul>
+                     </li>
+                 </ul>
+             </div>
+        </li>
+        <li>
+            <h3 with-bold-text show-next-sibling>Reacting to actions</h3>
+        </li>
+    </ol>
+    
+   <div class="docs-examples">
+        <h2>Examples</h2>
+        <mat-list>
+            <a mat-list-item  class="list-item" routerLink="data-retrieval-example">
+                Reactive Data Retrieval Example
+            </a>
+            <a mat-list-item class="list-item" routerLink="going-reactive/combining-stream">
+                Combining Streams Example
+            </a>
+        </mat-list>
+   </div>
+</div>

@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
 import Link from './interfaces/Link';
 
 @Component({
@@ -15,11 +14,11 @@ export class AppComponent {
     },
     {
       href: '/rxjs',
-      name: 'RxJS'
+      name: 'RxJS Basics'
     },
+    {
+      href: '/going-reactive',
+      name: 'Going Reactive'
+    }
   ]
-
-  prepareRoute(outlet: RouterOutlet) {
-    return false;
-  }
 }

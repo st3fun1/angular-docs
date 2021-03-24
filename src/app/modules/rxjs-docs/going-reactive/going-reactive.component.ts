@@ -9,12 +9,6 @@ import { FakeApiService } from 'src/app/services/fake-api.service';
   styleUrls: ['./going-reactive.component.scss']
 })
 export class GoingReactiveComponent implements OnInit {
-  photos$: Observable<Photo[]> | null = null;
-  constructor(
-    private fakeApiService: FakeApiService
-  ) { 
-    this.photos$ = this.fakeApiService.getPhotos();
-  }
 
   ngOnInit(): void {
   }

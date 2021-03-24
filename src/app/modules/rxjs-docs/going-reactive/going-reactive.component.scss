@@ -1,0 +1,24 @@
+#app {
+    :host ::ng-deep .mat-list-item-content {
+        padding: 0;
+    }    
+}
+
+.docs-container {
+    display: flex;
+    .docs-example, .docs-list {
+        width: 50%;
+    }
+
+    .docs-list h3 {
+        cursor: pointer;
+    }
+
+    .section-details {
+        display: none;
+    }
+
+    .isActive + .section-details {
+        display: block;
+    }
+}

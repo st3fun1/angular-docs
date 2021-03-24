@@ -5,6 +5,7 @@ import { HighlightModule, HIGHLIGHT_OPTIONS } from 'ngx-highlightjs';
 import { AppRoutingModule } from './modules/routing/app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import {MatListModule} from '@angular/material/list';
+import {MatTableModule} from '@angular/material/table';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule, NoopAnimationsModule} from '@angular/platform-browser/animations';
 import {MatDividerModule} from '@angular/material/divider';
@@ -20,6 +21,11 @@ import { DemoComponent } from './modules/rxjs-docs/demo/demo.component';
 import { CommonModule } from '@angular/common';
 import { GoingReactiveComponent } from './modules/rxjs-docs/going-reactive/going-reactive.component';
 import { NavigationComponent } from './modules/layout/navigation/navigation.component';
+import { DataRetrievalExampleComponent } from './data-retrieval-example/data-retrieval-example.component';
+import { PhotoDetailComponent } from './photo-detail/photo-detail.component';
+import { WithBoldTextDirective } from './with-bold-text.directive';
+import { ShowNextSiblingDirective } from './show-next-sibling.directive';
+import { CombiningStreamsExampleComponent } from './combining-streams-example/combining-streams-example.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +38,12 @@ import { NavigationComponent } from './modules/layout/navigation/navigation.comp
     FooterComponent,
     DemoComponent,
     GoingReactiveComponent,
-    NavigationComponent
+    NavigationComponent,
+    DataRetrievalExampleComponent,
+    PhotoDetailComponent,
+    WithBoldTextDirective,
+    ShowNextSiblingDirective,
+    CombiningStreamsExampleComponent,
   ],
   imports: [
     BrowserModule,
@@ -45,7 +56,8 @@ import { NavigationComponent } from './modules/layout/navigation/navigation.comp
     MatSelectModule,
     HighlightModule,
     CommonModule,
-    HttpClientModule
+    HttpClientModule,
+    MatTableModule
   ],
   providers: [
     {

@@ -5,6 +5,11 @@ import { RxJSIntroComponent } from '../rxjs-docs/rx-jsintro/rx-jsintro.component
 import { RxJSTermsAndSyntaxComponent } from '../rxjs-docs/rx-jsterms-and-syntax/rx-jsterms-and-syntax.component';
 import { DemoComponent } from '../rxjs-docs/demo/demo.component';
 import { GoingReactiveComponent } from '../rxjs-docs/going-reactive/going-reactive.component';
+import { DataRetrievalExampleComponent } from 'src/app/data-retrieval-example/data-retrieval-example.component';
+import { PhotoDetailComponent } from 'src/app/photo-detail/photo-detail.component';
+import { CombiningStreamsExampleComponent } from 'src/app/combining-streams-example/combining-streams-example.component';
+
+export const rxJSRouteOutlet = 'rxjsOutlet';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent, data: {animation: 'HomePage'}},
@@ -13,24 +18,35 @@ const routes: Routes = [
       {
           path: '',
           component: RxJSIntroComponent,
-          outlet: 'rxjsOutlet'
+          outlet: rxJSRouteOutlet
       },
       {
           path: 'terms-and-syntax',
           component: RxJSTermsAndSyntaxComponent,
-          outlet: 'rxjsOutlet'
-      },
-      {
-          path: 'going-reactive',
-          component: GoingReactiveComponent,
-          outlet: 'rxjsOutlet'
+          outlet: rxJSRouteOutlet
       },
       {
           path: 'demo',
           component: DemoComponent,
-          outlet: 'rxjsOutlet'
-      }
+          outlet: rxJSRouteOutlet
+      },
   ]},
+  {
+    path: 'going-reactive',
+    component: GoingReactiveComponent,
+  },
+  {
+    path: 'going-reactive/data-retrieval-example', 
+    component: DataRetrievalExampleComponent,
+  },
+  {
+      path: 'going-reactive/data-retrieval-example/photo/:photoId',
+      component: PhotoDetailComponent
+  },
+  {
+    path: 'going-reactive/combining-stream', 
+    component: CombiningStreamsExampleComponent,
+  },
 ];
 
 export default routes;
