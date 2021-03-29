@@ -8,6 +8,7 @@ import { GoingReactiveComponent } from '../rxjs-docs/going-reactive/going-reacti
 import { DataRetrievalExampleComponent } from 'src/app/data-retrieval-example/data-retrieval-example.component';
 import { PhotoDetailComponent } from 'src/app/photo-detail/photo-detail.component';
 import { CombiningStreamsExampleComponent } from 'src/app/combining-streams-example/combining-streams-example.component';
+import { AddPhotoComponent } from 'src/app/add-photo/add-photo.component';
 
 export const rxJSRouteOutlet = 'rxjsOutlet';
 
@@ -47,6 +48,10 @@ const routes: Routes = [
     path: 'going-reactive/combining-stream', 
     component: CombiningStreamsExampleComponent,
   },
+  {
+    path: 'going-reactive/data-retrieval-example/add/photo',
+    component: AddPhotoComponent
+  }
 ];
 
 export default routes;

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
-import { from, Observable, of, throwError} from 'rxjs';
+import { combineLatest, from, Observable, of, throwError} from 'rxjs';
 import { catchError, map, tap} from 'rxjs/operators';
 import { Photo } from '../photo';
 import { PhotoCategory } from '../photo-category';
@@ -30,6 +30,18 @@ export class FakeApiService {
     categoryName: 'Third album',
     categoryId: 3
   }]);
+
+  photosWithCategories$ = combineLatest([
+    this.photos$,
+    this.photoCategories$
+  ]).pipe(
+    map(([photos, photoCategories]) => {
+      return photos.map((photo: Photo) => ({
+        ...photo,
+        categoryName: (photoCategories.find( category => category.categoryId === photo.albumId)?.categoryName) || "Random Album"
+      }));
+    })
+  );
 
   constructor(private http: HttpClient) { 
   }

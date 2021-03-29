@@ -113,6 +113,9 @@
                                 <p>It is a static creation fn</p>
                                 <p>It takes the latest value from each stream</p>
                                 <p>Emitted value combines the latest emitted value from each input stream into an array</p>
+                                <h6>Example 2</h6>
+                                <p><code>combineLatest([data$, action$]</code></p>
+                                <p>Emits after both streams have emitted then emits each time after the action stream emits</p>
                                 <mat-divider></mat-divider>
                                 <h5>Used for</h5>
                                 <ul>
@@ -152,6 +155,21 @@
         </li>
         <li>
             <h3 with-bold-text show-next-sibling>Reacting to actions</h3>
+            <h4>.filter</h4>
+            <p>filter is a transformation operator</p>
+            <h4>Data stream vs action stream</h4>
+            <p>Data stream - emits once(http res)</p>
+            <p>Action stream - emits everytime an item is available</p>
+            <h4>Reacting to actions</h4>
+            <p>A <strong>Subject</strong> is both an Observable and Observer</p>
+            <p>An Observable is <strong>unicast</strong> = each observer gets a copy of the observable stream</p>
+            <p>A Subject is <strong>multicast</strong> = all observers shares the same stream</p>
+            <p>An action stream can be created by using a Subjecte/BehaviorSubject or built-in stream like onChanges(from forms) or fromEvent</p>
+            <p>Step two is to combine the action stream with the data stream</p>
+            <p>Last step is to emit a value to the action stream when an action occurs</p>
+        </li>
+        <li>
+            <h3 with-bold-text show-next-sibling>Reacting to actions: Actions</h3>
         </li>
     </ol>
     

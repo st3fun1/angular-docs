@@ -1,17 +1,20 @@
 <h2>Data Retrieval using HTTP get observable</h2>
 
-<ng-container *ngIf="!(photos$ | async) && !error">
+<button mat-button color="primary" (click)="handleAddPhoto()">
+  Add photo
+</button>
+<ng-container *ngIf="!(filteredPhotos$ | async) && !(errorMessage$ | async)">
   Loading...
 </ng-container>
-<ng-container *ngIf="error">
+<ng-container *ngIf="(errorMessage$ | async) as error">
     <div style="color: red">
       {{error}}
     </div>
 </ng-container>
-<ng-container *ngIf="photos$ | async as photos">
+<ng-container *ngIf="filteredPhotos$ | async as photos">
   <mat-form-field appearance="fill">
     <mat-label>Category Name</mat-label>
-    <mat-select (selectionChange)="onCategoryChange($event)">
+    <mat-select (selectionChange)="handleCategoryChange($event)">
       <mat-option [value]=""></mat-option>
       <mat-option *ngFor="let photoCategory of photoCategories$ | async" [value]="photoCategory.categoryId">
         {{photoCategory.categoryName}}

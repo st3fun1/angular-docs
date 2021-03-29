@@ -26,6 +26,10 @@ import { PhotoDetailComponent } from './photo-detail/photo-detail.component';
 import { WithBoldTextDirective } from './with-bold-text.directive';
 import { ShowNextSiblingDirective } from './show-next-sibling.directive';
 import { CombiningStreamsExampleComponent } from './combining-streams-example/combining-streams-example.component';
+import { AddPhotoComponent } from './add-photo/add-photo.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import {MatButtonModule} from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 @NgModule({
   declarations: [
@@ -44,6 +48,7 @@ import { CombiningStreamsExampleComponent } from './combining-streams-example/co
     WithBoldTextDirective,
     ShowNextSiblingDirective,
     CombiningStreamsExampleComponent,
+    AddPhotoComponent,
   ],
   imports: [
     BrowserModule,
@@ -57,7 +62,10 @@ import { CombiningStreamsExampleComponent } from './combining-streams-example/co
     HighlightModule,
     CommonModule,
     HttpClientModule,
-    MatTableModule
+    MatTableModule,
+    ReactiveFormsModule,
+    MatButtonModule,
+    MatFormFieldModule
   ],
   providers: [
     {

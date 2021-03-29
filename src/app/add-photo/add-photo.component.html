@@ -1,0 +1,19 @@
+<h1>Add new photo</h1>
+
+<form [formGroup]="photoForm" (ngSubmit)="onSubmit($event)">
+    <mat-form-field appearance="fill">
+        <input value="photoForm.get('albumId').value" matInput formControlName="albumId"/>
+    </mat-form-field>
+    <!-- <mat-form-field appearance="fill">
+        <mat-label>Title</mat-label>
+        <input matInput formControlName="title"/>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>URL</mat-label>
+        <input matInput formControlName="url"/>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>Thumbnail URL</mat-label>
+        <input matInput formControlName="thumbnailUrl"/>
+    </mat-form-field> -->
+</form>
