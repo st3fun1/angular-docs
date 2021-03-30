@@ -2,9 +2,9 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { MatSelectChange } from '@angular/material/select';
 import { Router } from '@angular/router';
 import { BehaviorSubject, combineLatest, EMPTY, Subject } from 'rxjs';
-import { catchError, map } from 'rxjs/operators';
-import { Photo } from '../photo';
-import { FakeApiService } from '../services/fake-api.service';
+import { catchError, map, tap } from 'rxjs/operators';
+import { Photo } from '../../../shared/interfaces/photo';
+import { FakeApiService } from '../../../services/fake-api.service';
 
 @Component({
   selector: 'app-data-retrieval-example',
@@ -22,7 +22,7 @@ export class DataRetrievalExampleComponent implements OnInit {
   // data stream
   filteredPhotos$ = combineLatest([
     // data stream
-    this.fakeApiService.photosWithCategories$,
+    this.fakeApiService.photosWithAdd$,
     // action stream
     this.categorySelectedAction$
   ]).pipe(
@@ -31,6 +31,7 @@ export class DataRetrievalExampleComponent implements OnInit {
       return EMPTY;
     }),
     map( ([photos, categoryId]) => {
+      console.log(photos, categoryId)
       return photos.filter((photo: Photo) => {
         return categoryId ? photo.albumId === categoryId : true;
       })
@@ -57,5 +58,9 @@ export class DataRetrievalExampleComponent implements OnInit {
 
   handleAddPhoto() {
     this.router.navigate(['going-reactive', 'data-retrieval-example', 'add', 'photo']);
+  }
+
+  addNewItemInline() {
+    this.fakeApiService.addPhoto();
   }
 }

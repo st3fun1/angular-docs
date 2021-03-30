@@ -21,15 +21,19 @@ import { DemoComponent } from './modules/rxjs-docs/demo/demo.component';
 import { CommonModule } from '@angular/common';
 import { GoingReactiveComponent } from './modules/rxjs-docs/going-reactive/going-reactive.component';
 import { NavigationComponent } from './modules/layout/navigation/navigation.component';
-import { DataRetrievalExampleComponent } from './data-retrieval-example/data-retrieval-example.component';
-import { PhotoDetailComponent } from './photo-detail/photo-detail.component';
-import { WithBoldTextDirective } from './with-bold-text.directive';
-import { ShowNextSiblingDirective } from './show-next-sibling.directive';
-import { CombiningStreamsExampleComponent } from './combining-streams-example/combining-streams-example.component';
-import { AddPhotoComponent } from './add-photo/add-photo.component';
+import { DataRetrievalExampleComponent } from './modules/rxjs-docs/data-retrieval-example/data-retrieval-example.component';
+import { PhotoDetailComponent } from './modules/rxjs-docs/photo-detail/photo-detail.component';
+import { WithBoldTextDirective } from './shared/directives/with-bold-text.directive';
+import { ShowNextSiblingDirective } from './shared/directives/show-next-sibling.directive';
+import { CombiningStreamsExampleComponent } from './modules/rxjs-docs/combining-streams-example/combining-streams-example.component';
+import { AddPhotoComponent } from './modules/rxjs-docs/add-photo/add-photo.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import {MatButtonModule} from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {MatIconModule} from '@angular/material/icon';
+import { HigherOrderObservablesExampleComponent } from './modules/rxjs-docs/higher-order-observables-example/higher-order-observables-example.component';
+import { DemoExamplesComponent } from './modules/rxjs-docs/demo-examples/demo-examples.component';
 
 @NgModule({
   declarations: [
@@ -49,12 +53,13 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     ShowNextSiblingDirective,
     CombiningStreamsExampleComponent,
     AddPhotoComponent,
+    HigherOrderObservablesExampleComponent,
+    DemoExamplesComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     MatListModule, 
-    BrowserAnimationsModule, 
     NoopAnimationsModule,
     MatExpansionModule, 
     MatDividerModule,
@@ -65,7 +70,10 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     MatTableModule,
     ReactiveFormsModule,
     MatButtonModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatInputModule,
+    BrowserAnimationsModule,
+    MatIconModule
   ],
   providers: [
     {

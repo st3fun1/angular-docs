@@ -155,21 +155,89 @@
         </li>
         <li>
             <h3 with-bold-text show-next-sibling>Reacting to actions</h3>
-            <h4>.filter</h4>
-            <p>filter is a transformation operator</p>
-            <h4>Data stream vs action stream</h4>
-            <p>Data stream - emits once(http res)</p>
-            <p>Action stream - emits everytime an item is available</p>
-            <h4>Reacting to actions</h4>
-            <p>A <strong>Subject</strong> is both an Observable and Observer</p>
-            <p>An Observable is <strong>unicast</strong> = each observer gets a copy of the observable stream</p>
-            <p>A Subject is <strong>multicast</strong> = all observers shares the same stream</p>
-            <p>An action stream can be created by using a Subjecte/BehaviorSubject or built-in stream like onChanges(from forms) or fromEvent</p>
-            <p>Step two is to combine the action stream with the data stream</p>
-            <p>Last step is to emit a value to the action stream when an action occurs</p>
+            <div class="section-details">
+                <h4>.filter</h4>
+                <p>filter is a transformation operator</p>
+                <h4>Data stream vs action stream</h4>
+                <p>Data stream - emits once(http res)</p>
+                <p>Action stream - emits everytime an item is available</p>
+                <h4>Reacting to actions</h4>
+                <p>A <strong>Subject</strong> is both an Observable and Observer</p>
+                <p>An Observable is <strong>unicast</strong> = each observer gets a copy of the observable stream</p>
+                <p>A Subject is <strong>multicast</strong> = all observers shares the same stream</p>
+                <p>An action stream can be created by using a Subjecte/BehaviorSubject or built-in stream like onChanges(from forms) or fromEvent</p>
+                <p>Step two is to combine the action stream with the data stream</p>
+                <p>Last step is to emit a value to the action stream when an action occurs</p>
+            </div>
         </li>
         <li>
             <h3 with-bold-text show-next-sibling>Reacting to actions: Actions</h3>
+            <div class="section-details">
+                <h4 with-bold-text>merge</h4>
+                <p>Combines multiple streams by merging their emissions</p>
+                <p><code>merge(a$, b$, c$)</code></p>
+                <p>Is a static creation fn, not a pipeable operator</p>
+                <p>Used for combining dequences of similar types to blend their emitted values</p>
+                <p>combination creation function, when an item is emitted from any stream is emitted to output stream</p>
+                <h4 with-bold-text>scan</h4>
+                <p>Accumulates items in a stream</p>
+                <p><code>scan((acc, curr) => acc + curr)</code></p>
+                <p>Used for totaling amounts and accumulating items into an array</p>
+                <p>transformation operator, takes input stream</p>
+            </div>
+        </li>
+        <li>
+            <h3 with-bold-text show-next-sibling>Caching Observables</h3>
+            <div class="section-details">
+                <p>
+                    Caching - retaining retrieved data locally
+                </p>
+                <p>
+                    With caching you can reuse previously retrieved data
+                </p>
+                <p>
+                    Cache can be stored in memory at runtime or external
+                </p>
+                <h4>Why Caching?</h4>
+                <p>
+                    Improves responsiveness - cached data doesn't require for example a new http req
+                </p>
+                <p>
+                    Caching reduces bandwidth and network consumption
+                </p>
+                <p>
+                    It reduces backend server load
+                </p>
+                <p>
+                    Reduces redundant/repetitive computations
+                </p>
+                <h4>Caching Patterns</h4>
+                <p>Define a property in the service which will store the results, if the property is empty issue a new http request to get data</p>
+                <p>or declarative <strong>shareReplay</strong></p>
+                <h5>shareReplay</h5>
+                <p>Shares the stream with other subscribers</p>
+                <p>Replays the defined number of emissions on subscription</p>
+                <p>shareReplay(1) - it replays the last emission</p>
+                <p>Used for caching data in the app</p>
+                <p>Is a multicast operator</p>
+                <p>Returns a Subject that shares a single subscription to the underlying source</p>
+                <p>It takes in an optional buffer size, which is the number of items cached and replayed</p>
+                <p>On a subscribe, it replays a specified number of emissions</p>
+                <p>The items stays cached forever, even after there are no more subscribers</p>
+                <h6>Cache Invalidation</h6>
+                <p>for stale data that changes often, we don't need caching</p>
+                <p>Cache invalidation time based</p>
+                <p>Allow use to control when data is refreshed</p>
+                <p>Always get fresh data on update operations</p>
+            </div>
+        </li>
+        <li>
+            <h3 with-bold-text show-next-sibling>Higher Order Observables</h3>
+            <div class="section-details">
+                <p>some observables emit primitives</p>
+                <p>some observables emit arrays</p>
+                <p>some observables emit other observables</p>
+            </div>
         </li>
     </ol>
     
@@ -179,8 +247,8 @@
             <a mat-list-item  class="list-item" routerLink="data-retrieval-example">
                 Reactive Data Retrieval Example
             </a>
-            <a mat-list-item class="list-item" routerLink="going-reactive/combining-stream">
-                Combining Streams Example
+            <a mat-list-item class="list-item" routerLink="higher-order-observables">
+                Higher Order Observables Example
             </a>
         </mat-list>
    </div>

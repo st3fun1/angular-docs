@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { switchMap, tap } from 'rxjs/operators';
-import { Photo } from '../photo';
-import { FakeApiService } from '../services/fake-api.service';
+import { Photo } from '../../../shared/interfaces/photo';
+import { FakeApiService } from '../../../services/fake-api.service';
 
 @Component({
   selector: 'app-photo-detail',

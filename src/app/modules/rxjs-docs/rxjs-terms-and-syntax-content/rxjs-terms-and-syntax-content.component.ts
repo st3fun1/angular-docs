@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Rxjscodeexample } from '../../../interfaces/rxjscodeexample.enum';
+import { Rxjscodeexample } from '../../../shared/interfaces/rxjscodeexample.enum';
 
 @Component({
   selector: 'app-rxjs-terms-and-syntax-content',

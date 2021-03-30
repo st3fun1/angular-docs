@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { MatSelectChange } from '@angular/material/select';
-import { CodeDemoOptions } from '../../../interfaces/code-demo';
-import { CodeDemoName } from '../../../interfaces/code-demo-name.enum';
+import { CodeDemoOptions } from '../../../shared/interfaces/code-demo';
 import { LogServiceService } from '../../../services/log-service.service';
 import { RxJSCodeDemoRepoService } from '../../../services/rx-jscode-demo-repo.service';
 
@@ -11,29 +10,11 @@ import { RxJSCodeDemoRepoService } from '../../../services/rx-jscode-demo-repo.s
   styleUrls: ['./demo.component.scss']
 })
 export class DemoComponent implements OnInit {
-  codeDemos: CodeDemoOptions[] = [
-    {
-      name: 'of Creation function',
-      option: CodeDemoName.OF
-    },
-    {
-      name: 'from Creation Function',
-      option: CodeDemoName.FROM
-    },
-    {
-      name: 'fromEvent Creation function',
-      option: CodeDemoName.FROM_EVENT
-    },
-    {
-      name: 'operators',
-      option: CodeDemoName.OPERATORS
-    }
-  ];
-  logs: string[] = [];
-  
+  @Input() codeDemos: CodeDemoOptions[] = [];
+  @Input() runDemoCode: Function = () => {}; 
 
+  logs: string[] = [];
   constructor(
-    private codeDemoRepo: RxJSCodeDemoRepoService,
     private logService: LogServiceService
   ) { }
 
@@ -45,7 +26,7 @@ export class DemoComponent implements OnInit {
 
   onCodeDemoChange(demoOption: MatSelectChange): void {
     this.logs = [];
-    this.codeDemoRepo.runDemoCode(demoOption.value);
+    this.runDemoCode(demoOption.value);
   }
 
   onOpenedChange(event: boolean) {

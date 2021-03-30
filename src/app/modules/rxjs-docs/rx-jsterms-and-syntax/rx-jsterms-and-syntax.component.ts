@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { HighlightResult } from 'ngx-highlightjs';
-import { PanelItem } from '../../../interfaces/panel-item';
+import { PanelItem } from '../../../shared/interfaces/panel-item';
 import { RxJsCodeService } from '../../../services/rx-js-code.service';
-import { Rxjscodeexample } from '../../../interfaces/rxjscodeexample.enum';
+import { Rxjscodeexample } from '../../../shared/interfaces/rxjscodeexample.enum';
 
 @Component({
   selector: 'app-rx-jsterms-and-syntax',

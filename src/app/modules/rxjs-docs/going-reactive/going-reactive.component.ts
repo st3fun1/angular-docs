@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Photo } from 'src/app/photo';
+import { Photo } from 'src/app/shared/interfaces/photo';
 import { FakeApiService } from 'src/app/services/fake-api.service';
 
 @Component({

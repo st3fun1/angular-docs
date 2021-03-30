@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import Link from './interfaces/Link';
+import Link from './shared/interfaces/Link';
 
 @Component({
   selector: 'app-root',

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { from, of, fromEvent } from 'rxjs';
 import { map, tap, take } from 'rxjs/operators';
-import { CodeDemoName } from '../interfaces/code-demo-name.enum';
+import { CodeDemoName } from '../shared/interfaces/code-demo-name.enum';
 import { LogServiceService } from './log-service.service';
 
 @Injectable({
@@ -25,7 +25,7 @@ export class RxJSCodeDemoRepoService {
     }
   }
 
-  runDemoCode(name: CodeDemoName) { 
+  runDemoCode = (name: CodeDemoName) => { 
     return this.demos[name].fn();
   }
 

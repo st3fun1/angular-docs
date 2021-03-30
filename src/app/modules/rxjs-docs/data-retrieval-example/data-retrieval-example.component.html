@@ -1,8 +1,10 @@
 <h2>Data Retrieval using HTTP get observable</h2>
 
-<button mat-button color="primary" (click)="handleAddPhoto()">
-  Add photo
-</button>
+<div>
+  <button mat-raised-button color="primary" (click)="handleAddPhoto()" style="margin-bottom: 20px">
+    Add photo page
+  </button>
+</div>
 <ng-container *ngIf="!(filteredPhotos$ | async) && !(errorMessage$ | async)">
   Loading...
 </ng-container>
@@ -12,7 +14,7 @@
     </div>
 </ng-container>
 <ng-container *ngIf="filteredPhotos$ | async as photos">
-  <mat-form-field appearance="fill">
+  <mat-form-field appearance="fill" style="margin-right: 8px;">
     <mat-label>Category Name</mat-label>
     <mat-select (selectionChange)="handleCategoryChange($event)">
       <mat-option [value]=""></mat-option>
@@ -21,6 +23,9 @@
       </mat-option>
     </mat-select>
   </mat-form-field>
+  <button mat-raised-button color="primary" (click)="addNewItemInline()">
+    <mat-icon>library_add</mat-icon>
+  </button>
   <table mat-table [dataSource]="photos" class="mat-elevation-z8">
     <ng-container matColumnDef="categoryName">
       <th mat-header-cell *matHeaderCellDef> Category Name </th>

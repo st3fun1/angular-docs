@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Rxjscodeexample } from '../interfaces/rxjscodeexample.enum';
+import { Rxjscodeexample } from '../shared/interfaces/rxjscodeexample.enum';
 
 @Injectable({
   providedIn: 'root'
