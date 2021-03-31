@@ -355,6 +355,25 @@
         <p>Used for operations such as type ahead or auto completion</p>
       </div>
     </li>
+    <li>
+      <h3 with-bold-text show-next-sibling>Related Data Streams</h3>
+      <div class="section-details">
+        <h4>Techniques for getting data</h4>
+        <h5>Get it all</h5>
+        <p>
+          Gets all the related items within a dataset as needed for display.
+        </p>
+        <p>Example: <code>combileLatest(product$, suppliers$)</code></p>
+        <p>
+          Used only when: if the related dataset is of reasonable size and can
+          be cached(it is not used often)
+        </p>
+        <h5>Just in time</h5>
+        <p>We retrieve just the related items when we need them</p>
+        <p>Example: <code>mergeMap(...)</code></p>
+        <p>Used if the dataset is large or if data changes often</p>
+      </div>
+    </li>
   </ol>
 
   <div class="docs-examples">
