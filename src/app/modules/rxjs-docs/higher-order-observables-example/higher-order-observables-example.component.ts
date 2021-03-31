@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { HigherOrderObservablesDemoName } from 'src/app/higher-order-observables-demo-name.enum';
-import { HigherorderobservablesdemorepoService } from 'src/app/higherorderobservablesdemorepo.service';
+import { HigherOrderObservablesDemoName } from 'src/app/shared/interfaces/higher-order-observables-demo-name.enum';
+import { HigherorderobservablesdemorepoService } from 'src/app/services/higherorderobservablesdemorepo.service';
 import { CodeDemoOptions } from 'src/app/shared/interfaces/code-demo';
 
 @Component({
