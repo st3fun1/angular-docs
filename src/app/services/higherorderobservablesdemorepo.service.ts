@@ -9,9 +9,9 @@ import {
   switchMap,
   tap,
 } from 'rxjs/operators';
-import { HigherOrderObservablesDemoName } from './higher-order-observables-demo-name.enum';
-import { Post } from './post';
-import { LogServiceService } from './services/log-service.service';
+import { HigherOrderObservablesDemoName } from '../shared/interfaces/higher-order-observables-demo-name.enum';
+import { Post } from '../post';
+import { LogServiceService } from './log-service.service';
 
 @Injectable({
   providedIn: 'root',
