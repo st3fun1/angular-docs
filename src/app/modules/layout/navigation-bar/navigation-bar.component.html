@@ -1,0 +1,16 @@
+<header class="header">
+  <mat-nav-list>
+    <div class="logo-container">
+      <img src="/assets/angular-icon.png" />
+    </div>
+    <a
+      class="nav-link"
+      routerLinkActive="active-link"
+      mat-list-item
+      [routerLink]="link.href"
+      *ngFor="let link of links"
+    >
+      {{ link.name }}
+    </a>
+  </mat-nav-list>
+</header>

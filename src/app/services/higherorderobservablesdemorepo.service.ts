@@ -1,15 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { of } from 'rxjs';
-import {
-  concatMap,
-  delay,
-  map,
-  mergeMap,
-  switchMap,
-  tap,
-} from 'rxjs/operators';
-import { HigherOrderObservablesDemoName } from '../shared/interfaces/higher-order-observables-demo-name.enum';
+import { concatMap, map, mergeMap, switchMap, tap } from 'rxjs/operators';
+import { HigherOrderObservablesDemoName } from '../modules/shared/interfaces/higher-order-observables-demo-name.enum';
 import { Post } from '../post';
 import { LogServiceService } from './log-service.service';
 

@@ -1,14 +1,9 @@
-<header class="header">
-  <mat-nav-list>
-    <div class="logo-container">
-      <img src="/assets/angular-icon.png"/>
+<div id="root">
+  <app-navigation-bar></app-navigation-bar>
+  <main class="main" id="app">
+    <div>
+      <router-outlet #outlet="outlet"></router-outlet>
     </div>
-    <a class="nav-link" routerLinkActive="active-link"  mat-list-item [routerLink]="link.href" *ngFor="let link of links"> {{link.name}} </a>
- </mat-nav-list>
-</header>
-<main class="main" id="app">
-  <div>
-    <router-outlet #outlet="outlet"></router-outlet>
-  </div>
-</main>
-<app-footer></app-footer>
+  </main>
+  <app-footer></app-footer>
+</div>

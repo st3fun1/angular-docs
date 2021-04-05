@@ -1,0 +1,36 @@
+@import "~@angular/material/theming";
+
+a {
+  box-sizing: border-box;
+}
+.header {
+  margin-bottom: 32px;
+  .mat-nav-list {
+    padding: 8px 32px;
+    background-color: indigo;
+    box-shadow: -1px 4px 2px #000000;
+    display: flex;
+    align-items: center;
+    .mat-list-item.nav-link {
+      display: inline-block;
+      width: auto;
+      color: white;
+      margin-right: 8px;
+      &.active-link {
+        background-color: blueviolet;
+        border-radius: 4px;
+      }
+    }
+  }
+}
+
+.logo-container {
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  margin-right: 24px;
+  img {
+    width: 100%;
+    height: auto;
+  }
+}

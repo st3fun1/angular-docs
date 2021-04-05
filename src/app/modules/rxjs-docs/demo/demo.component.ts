@@ -1,27 +1,24 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { MatSelectChange } from '@angular/material/select';
-import { CodeDemoOptions } from '../../../shared/interfaces/code-demo';
 import { LogServiceService } from '../../../services/log-service.service';
-import { RxJSCodeDemoRepoService } from '../../../services/rx-jscode-demo-repo.service';
+import { CodeDemoOptions } from '../../shared/interfaces/code-demo';
 
 @Component({
   selector: 'app-demo',
   templateUrl: './demo.component.html',
-  styleUrls: ['./demo.component.scss']
+  styleUrls: ['./demo.component.scss'],
 })
 export class DemoComponent implements OnInit {
   @Input() codeDemos: CodeDemoOptions[] = [];
-  @Input() runDemoCode: Function = () => {}; 
+  @Input() runDemoCode: Function = () => {};
 
   logs: string[] = [];
-  constructor(
-    private logService: LogServiceService
-  ) { }
+  constructor(private logService: LogServiceService) {}
 
   ngOnInit(): void {
-    this.logService.logSubject$.subscribe( (data: string) => {
+    this.logService.logSubject$.subscribe((data: string) => {
       this.logs = [...this.logs, data];
-    })
+    });
   }
 
   onCodeDemoChange(demoOption: MatSelectChange): void {
@@ -29,7 +26,5 @@ export class DemoComponent implements OnInit {
     this.runDemoCode(demoOption.value);
   }
 
-  onOpenedChange(event: boolean) {
-  }
-
+  onOpenedChange(event: boolean) {}
 }

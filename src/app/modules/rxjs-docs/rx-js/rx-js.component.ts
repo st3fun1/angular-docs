@@ -1,29 +1,26 @@
 import { Component, OnInit } from '@angular/core';
-import Link from '../../../shared/interfaces/Link';
+import Link from '../../shared/interfaces/Link';
 
 @Component({
   selector: 'app-rx-js',
   templateUrl: './rx-js.component.html',
-  styleUrls: ['./rx-js.component.scss']
+  styleUrls: ['./rx-js.component.scss'],
 })
 export class RxJSComponent implements OnInit {
-
   links: Link[] = [
     {
       href: 'terms-and-syntax',
       name: 'Terms and Syntax',
-      child: true
+      child: true,
     },
     {
       href: 'demo',
       name: 'Demo',
-      child: true
-    }
+      child: true,
+    },
   ];
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

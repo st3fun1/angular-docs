@@ -1,26 +1,26 @@
 import { Injectable } from '@angular/core';
-import { Rxjscodeexample } from '../shared/interfaces/rxjscodeexample.enum';
+import { Rxjscodeexample } from '../modules/shared/interfaces/rxjscodeexample.enum';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class RxJsCodeService {
-  rxjsCodeList: {[key in Rxjscodeexample]: string} = {
-    [Rxjscodeexample.OBSERVER]: ` 
+  rxjsCodeList: { [key in Rxjscodeexample]: string } = {
+    [Rxjscodeexample.OBSERVER]: `
     const observer = {
       next: apple => console.log(apple),
       error: err => console.log(err),
       complete: () => console.log("No more apples go home")
     }
    `,
-   [Rxjscodeexample.OBSERVABLE_STREAM]:`
+    [Rxjscodeexample.OBSERVABLE_STREAM]: `
    const appleStream = new Observable(appleObserver => {
      appleObserver.next('Apple 1');
      appleObserver.next('Apple 2');
      appleObserver.complete();
    })
   `,
-  [Rxjscodeexample.SUBSCRIPTION]:`
+    [Rxjscodeexample.SUBSCRIPTION]: `
     const observer = {
       next: apple => console.log(apple),
       error: err => console.log(err),
@@ -41,12 +41,12 @@ export class RxJsCodeService {
       () => console.log("No more apples go home")
     );
   `,
-  [Rxjscodeexample.UNSUBSCRIBE]: `
+    [Rxjscodeexample.UNSUBSCRIBE]: `
       const sub = appleStream.subscribe(observer);
 
       sub.unsubscribe();
   `,
-  [Rxjscodeexample.CREATION_FN]: `
+    [Rxjscodeexample.CREATION_FN]: `
       // 2 streams
       const appleStream = of('Apple1', 'Apple2');
 
@@ -73,7 +73,7 @@ export class RxJsCodeService {
       // interval
       const num = interval(1000).subscribe(console.log);
   `,
-  [Rxjscodeexample.OPERATORS]: `
+    [Rxjscodeexample.OPERATORS]: `
       // source observable
       of(2, 4, 6)
       .pipe(
@@ -81,10 +81,10 @@ export class RxJsCodeService {
         tap(item => console.log(item)),
         take(2)
       ).subscribe(console.log);
-    `
-  }
+    `,
+  };
 
-  getCodeByKey(key: Rxjscodeexample): string{
+  getCodeByKey(key: Rxjscodeexample): string {
     return this.rxjsCodeList[key];
   }
 }

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { slideInAnimation } from '../../../shared/animations';
 
 @Component({
   selector: 'app-home',
@@ -7,10 +6,7 @@ import { slideInAnimation } from '../../../shared/animations';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }
