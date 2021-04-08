@@ -8,12 +8,6 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
-import { HttpClientModule } from '@angular/common/http';
-import {
-  BrowserAnimationsModule,
-  NoopAnimationsModule,
-} from '@angular/platform-browser/animations';
-import { CommonModule as NgCommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [],
@@ -27,10 +21,6 @@ import { CommonModule as NgCommonModule } from '@angular/common';
     MatInputModule,
     MatListModule,
     MatIconModule,
-    HttpClientModule,
-    BrowserAnimationsModule,
-    NoopAnimationsModule,
-    NgCommonModule,
   ],
   exports: [
     MatExpansionModule,
@@ -42,10 +32,6 @@ import { CommonModule as NgCommonModule } from '@angular/common';
     MatInputModule,
     MatListModule,
     MatIconModule,
-    HttpClientModule,
-    BrowserAnimationsModule,
-    NoopAnimationsModule,
-    NgCommonModule,
   ],
 })
 export class CommonModule {}

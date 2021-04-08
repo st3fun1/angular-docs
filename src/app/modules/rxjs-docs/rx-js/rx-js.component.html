@@ -1,10 +1,25 @@
 <h1>RxJS in Angular: Reactive Development</h1>
 <nav class="sub-navigation">
-    <mat-nav-list class="list">
-        <a class="subroute-link" mat-list-item routerLink="/rxjs" routerLinkActive="active-subroute"  [routerLinkActiveOptions]="{exact: true}"> Intro </a>
-        <a class="subroute-link" *ngFor="let link of links" mat-list-item  [routerLinkActiveOptions]="{exact: true}" [routerLink]="['/rxjs', {outlets: {rxjsOutlet: [link.href]}}]" routerLinkActive="active-subroute" > {{ link.name }} </a>
-     </mat-nav-list>
+  <mat-nav-list class="list">
+    <a
+      class="subroute-link"
+      *ngFor="let link of links"
+      mat-list-item
+      [routerLinkActiveOptions]="{ exact: true }"
+      [routerLink]="['.', { outlets: { rxjsOutlet: [link.href] } }]"
+      routerLinkActive="active-subroute"
+    >
+      {{ link.name }}
+    </a>
+    <a
+      class="subroute-link"
+      mat-list-item
+      [routerLink]="['/rxjs', 'going-reactive']"
+    >
+      Going Reactive
+    </a>
+  </mat-nav-list>
 </nav>
 <div class="container">
-    <router-outlet name="rxjsOutlet"></router-outlet>
+  <router-outlet name="rxjsOutlet"></router-outlet>
 </div>

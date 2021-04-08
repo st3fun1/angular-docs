@@ -9,6 +9,11 @@ import Link from '../../shared/interfaces/Link';
 export class RxJSComponent implements OnInit {
   links: Link[] = [
     {
+      href: 'intro',
+      name: 'Intro',
+      child: true,
+    },
+    {
       href: 'terms-and-syntax',
       name: 'Terms and Syntax',
       child: true,

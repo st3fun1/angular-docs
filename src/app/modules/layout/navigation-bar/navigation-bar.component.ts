@@ -12,12 +12,8 @@ export class NavigationBarComponent implements OnInit {
       name: 'Home',
     },
     {
-      href: '/rxjs',
-      name: 'RxJS Basics',
-    },
-    {
-      href: '/going-reactive',
-      name: 'Going Reactive',
+      href: '/rxjs/main',
+      name: 'RxJS',
     },
   ];
 
