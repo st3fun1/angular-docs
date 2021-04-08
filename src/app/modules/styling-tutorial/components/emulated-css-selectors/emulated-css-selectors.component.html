@@ -1,0 +1,53 @@
+<h1>Emulated CSS Selectors</h1>
+<ul>
+  <li>
+    <h2 with-bold-text show-next-sibling>:host</h2>
+    <div class="list-item">
+      <p>
+        Targets the host element(the component), which contains the shadow tree
+      </p>
+    </div>
+  </li>
+  <li>
+    <h2 with-bold-text show-next-sibling>:host-context</h2>
+    <div class="list-item">
+      <p>
+        Styles some elements based on a parent selector and looks up for it
+        until it reaches the root, it will look for the specified selector on
+        all parent nodes and the actual host itself
+      </p>
+      <pre>
+        <code
+        class="code-text"
+        [highlight]="code.HOST_CONTEXT"
+        [lineNumbers]="true"
+      ></code>
+      </pre>
+    </div>
+  </li>
+  <li>
+    <h2 with-bold-text show-next-sibling>::ng-deep combinator</h2>
+    <div class="list-item">
+      <p>Shadow Boundary, this combinator allows to pierce through it</p>
+      <p>
+        Project content is part of the parent, you need ::ng-deep in order to
+        style it
+      </p>
+      <p>
+        !Warning: ::ng-deep unscopes the styling, and it puts it globally, it
+        will apply globally
+      </p>
+      <p>
+        ::ng-deep should be used in combination with :host so we scope it to our
+        componen
+      </p>
+      <pre>
+        <code
+        class="code-text"
+        [highlight]="code.NG_DEEP"
+        [lineNumbers]="true"
+      ></code>
+      </pre>
+    </div>
+  </li>
+</ul>

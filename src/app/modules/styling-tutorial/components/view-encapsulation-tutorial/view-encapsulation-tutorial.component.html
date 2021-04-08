@@ -1,0 +1,41 @@
+<h1>View Encapsulation</h1>
+<p with-bold-text>
+  View Encapsulation controls whether we use emulate, we use Shadow DOM or we
+  don't use styling scoping behavior.
+</p>
+<h2>View Encapsulation Modes</h2>
+<ol>
+  <li>
+    <h3 show-next-sibling with-bold-text>None</h3>
+    <div class="list-item-content">
+      <p>
+        Completely turns off Emulated Shadow DOM encapsulation and puts all the
+        styling in the head, unscoped.
+      </p>
+      <p>Use cases: In App component(root), for global styling.</p>
+    </div>
+  </li>
+  <li>
+    <h3 show-next-sibling with-bold-text>Emulated(Default)</h3>
+    <div class="list-item-content">
+      <p>
+        By default, Angular, add some scoping attributes to a node within a
+        component.
+      </p>
+      <p>The custom element gets <strong>_nghost</strong> custom attribute</p>
+      <p>The content from the template gets <strong>_ngcontent</strong></p>
+      <h4>How does Angular processes the CSS?</h4>
+      <p>
+        If View Encapsulation is Emulated they are put in the style tag in head,
+        with a combination of selector + custom attribute
+      </p>
+    </div>
+  </li>
+  <li>
+    <h3 show-next-sibling with-bold-text>Native(Shadow DOM)</h3>
+    <div class="list-item-content">
+      <p>It uses Native Shadow DOM</p>
+      <p>An actual shadow root will be created</p>
+    </div>
+  </li>
+</ol>

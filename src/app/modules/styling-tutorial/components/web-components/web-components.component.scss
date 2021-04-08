@@ -1,0 +1,9 @@
+:host {
+  .list-item-content {
+    display: none;
+  }
+
+  .isActive + .list-item-content {
+    display: block;
+  }
+}

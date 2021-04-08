@@ -1,2 +1,49 @@
 <h1>Web components</h1>
-<p>Modular bundle of HTML, CSS and JS</p>
+<p with-bold-text>Modular bundle of HTML, CSS and JS which is encapsulated</p>
+<p>They are made of:</p>
+<ul>
+  <li>
+    <h2 show-next-sibling>Custom Elements</h2>
+    <div class="list-item-content">
+      <p>Used to create and use our own elements</p>
+      <pre>
+      <code
+        class="code-text"
+        [highlight]="code.customElements"
+        [lineNumbers]="true"
+      ></code>
+     </pre>
+    </div>
+  </li>
+  <li>
+    <h2 show-next-sibling>HTML Templates</h2>
+    <div class="list-item-content">
+      <p>Fragments of markup that isn't actually rendered to the screen</p>
+      <p>They are used to be referenced and cloned into a specific location</p>
+      <pre>
+        <code
+        class="code-text"
+        [highlight]="code.htmlTemplates"
+        [lineNumbers]="true"
+      ></code>
+      </pre>
+    </div>
+  </li>
+  <li>
+    <h2 show-next-sibling>Shadow DOM</h2>
+    <div class="list-item-content">
+      <p>
+        Is the encapsulated DOM that we have access to within our components to
+        style and script against
+      </p>
+      <p>Cannot be accessed from the light DOM using CSS or JS</p>
+      <pre>
+        <code
+        class="code-text"
+        [highlight]="code.shadowDOM"
+        [lineNumbers]="true"
+      ></code>
+      </pre>
+    </div>
+  </li>
+</ul>
