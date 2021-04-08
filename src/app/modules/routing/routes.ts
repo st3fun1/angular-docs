@@ -10,6 +10,13 @@ const routes: Routes = [
     loadChildren: () =>
       import('../rxjs-docs/rxjs-docs.module').then((m) => m.RxjsDocModule),
   },
+  {
+    path: 'styling-tutorial',
+    loadChildren: () =>
+      import('../styling-tutorial/styling-tutorial.module').then(
+        (m) => m.StylingTutorialModule
+      ),
+  },
 ];
 
 export default routes;

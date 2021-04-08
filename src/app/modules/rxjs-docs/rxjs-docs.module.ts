@@ -12,7 +12,6 @@ import { RxJSComponent } from './rx-js/rx-js.component';
 import { RxJSIntroComponent } from './rx-jsintro/rx-jsintro.component';
 import { RxJSTermsAndSyntaxComponent } from './rx-jsterms-and-syntax/rx-jsterms-and-syntax.component';
 import { RxjsDocRoutingModule } from './rxjs-docs-routing.module';
-import { HighlightModule, HIGHLIGHT_OPTIONS } from 'ngx-highlightjs';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RxjsTermsAndSyntaxContentComponent } from './rxjs-terms-and-syntax-content/rxjs-terms-and-syntax-content.component';
 import { DemoComponent } from './demo/demo.component';
@@ -22,7 +21,6 @@ import { SharedModule } from '../shared/shared.module';
   imports: [
     RxjsDocRoutingModule,
     CustomCommonModule,
-    HighlightModule,
     ReactiveFormsModule,
     CommonModule,
     SharedModule,
@@ -42,13 +40,6 @@ import { SharedModule } from '../shared/shared.module';
     DemoComponent,
     HigherOrderObservablesExampleComponent,
   ],
-  providers: [
-    {
-      provide: HIGHLIGHT_OPTIONS,
-      useValue: {
-        fullLibraryLoader: () => import('highlight.js'),
-      },
-    },
-  ],
+  providers: [],
 })
 export class RxjsDocModule {}

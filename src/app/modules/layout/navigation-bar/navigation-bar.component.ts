@@ -15,6 +15,10 @@ export class NavigationBarComponent implements OnInit {
       href: '/rxjs/main',
       name: 'RxJS',
     },
+    {
+      href: '/styling-tutorial',
+      name: 'Styling',
+    },
   ];
 
   constructor() {}
