@@ -5,24 +5,24 @@ import { CodeDemoName } from '../modules/shared/interfaces/code-demo-name.enum';
 import { LogServiceService } from './log-service.service';
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
 export class RxJSCodeDemoRepoService {
   constructor(private logService: LogServiceService) {}
 
   demos: { [key in CodeDemoName]: { fn: Function } } = {
     [CodeDemoName.FROM]: {
-      fn: this.runFromCode.bind(this),
+      fn: this.runFromCode.bind(this)
     },
     [CodeDemoName.OF]: {
-      fn: this.runOfCode.bind(this),
+      fn: this.runOfCode.bind(this)
     },
     [CodeDemoName.FROM_EVENT]: {
-      fn: this.runFromEvent.bind(this),
+      fn: this.runFromEvent.bind(this)
     },
     [CodeDemoName.OPERATORS]: {
-      fn: this.runOperators.bind(this),
-    },
+      fn: this.runOperators.bind(this)
+    }
   };
 
   runDemoCode = (name: CodeDemoName) => {
@@ -36,9 +36,7 @@ export class RxJSCodeDemoRepoService {
     });
     this.logService.sendData('Running `.of` variation code');
     of([2, 4, 6, 8]).subscribe((data) => {
-      this.logService.sendData(
-        `Next value is ${data}. Type of data is ${typeof data}.`
-      );
+      this.logService.sendData(`Next value is ${data}. Type of data is ${typeof data}.`);
     });
   }
 

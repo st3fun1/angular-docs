@@ -18,13 +18,7 @@ import { DemoComponent } from './demo/demo.component';
 import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
-  imports: [
-    RxjsDocRoutingModule,
-    CustomCommonModule,
-    ReactiveFormsModule,
-    CommonModule,
-    SharedModule,
-  ],
+  imports: [RxjsDocRoutingModule, CustomCommonModule, ReactiveFormsModule, CommonModule, SharedModule],
   declarations: [
     AddPhotoComponent,
     CombiningStreamsExampleComponent,
@@ -38,8 +32,8 @@ import { SharedModule } from '../shared/shared.module';
     RxJSTermsAndSyntaxComponent,
     RxjsTermsAndSyntaxContentComponent,
     DemoComponent,
-    HigherOrderObservablesExampleComponent,
+    HigherOrderObservablesExampleComponent
   ],
-  providers: [],
+  providers: []
 })
 export class RxjsDocModule {}

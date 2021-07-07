@@ -8,9 +8,8 @@ describe('RxJSTermsAndSyntaxComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ RxJSTermsAndSyntaxComponent ]
-    })
-    .compileComponents();
+      declarations: [RxJSTermsAndSyntaxComponent]
+    }).compileComponents();
   });
 
   beforeEach(() => {

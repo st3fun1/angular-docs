@@ -1,0 +1,10 @@
+# Ignore deps
+
+node_modules
+
+# Editors
+
+.idea
+
+# deps
+package-lock.json

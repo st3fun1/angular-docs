@@ -20,7 +20,7 @@ import { MatListModule } from '@angular/material/list';
     MatFormFieldModule,
     MatInputModule,
     MatListModule,
-    MatIconModule,
+    MatIconModule
   ],
   exports: [
     MatExpansionModule,
@@ -31,7 +31,7 @@ import { MatListModule } from '@angular/material/list';
     MatFormFieldModule,
     MatInputModule,
     MatListModule,
-    MatIconModule,
-  ],
+    MatIconModule
+  ]
 })
 export class CommonModule {}

@@ -6,26 +6,26 @@ import { HigherOrderObservablesDemoName } from '../../shared/interfaces/higher-o
 @Component({
   selector: 'app-higher-order-observables-example',
   templateUrl: './higher-order-observables-example.component.html',
-  styleUrls: ['./higher-order-observables-example.component.scss'],
+  styleUrls: ['./higher-order-observables-example.component.scss']
 })
 export class HigherOrderObservablesExampleComponent implements OnInit {
   codeDemos: CodeDemoOptions[] = [
     {
       name: 'Generic Example',
-      option: HigherOrderObservablesDemoName.GENERIC,
+      option: HigherOrderObservablesDemoName.GENERIC
     },
     {
       name: '.concatMap Example',
-      option: HigherOrderObservablesDemoName.CONCAT_MAP,
+      option: HigherOrderObservablesDemoName.CONCAT_MAP
     },
     {
       name: '.mergeMap Example',
-      option: HigherOrderObservablesDemoName.MERGE_MAP,
+      option: HigherOrderObservablesDemoName.MERGE_MAP
     },
     {
       name: '.switchMap Example',
-      option: HigherOrderObservablesDemoName.SWITCH_MAP,
-    },
+      option: HigherOrderObservablesDemoName.SWITCH_MAP
+    }
   ];
 
   constructor(public codeDemoRepo: HigherorderobservablesdemorepoService) {}

@@ -8,9 +8,8 @@ describe('DataRetrievalExampleComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DataRetrievalExampleComponent ]
-    })
-    .compileComponents();
+      declarations: [DataRetrievalExampleComponent]
+    }).compileComponents();
   });
 
   beforeEach(() => {

@@ -10,6 +10,6 @@ import { CommonModule as AppCommonModule } from '../common/common.module';
 @NgModule({
   declarations: [FooterComponent, NavigationBarComponent, AppToolsComponent],
   imports: [MatListModule, CommonModule, RouterModule, AppCommonModule],
-  exports: [FooterComponent, NavigationBarComponent, AppToolsComponent],
+  exports: [FooterComponent, NavigationBarComponent, AppToolsComponent]
 })
 export class LayoutModule {}

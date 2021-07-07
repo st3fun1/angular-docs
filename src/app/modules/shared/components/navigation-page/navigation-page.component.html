@@ -1,0 +1,8 @@
+<div class="container">
+    <h1>{{title}}</h1>
+    <mat-nav-list class="navigation-list">
+        <mat-list-item *ngFor="let link of links">
+            <a matLine [routerLink]="[link.href]">{{link.name}}</a>
+        </mat-list-item>
+    </mat-nav-list>
+</div>

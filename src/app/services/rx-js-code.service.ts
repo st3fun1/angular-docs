@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Rxjscodeexample } from '../modules/shared/interfaces/rxjscodeexample.enum';
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
 export class RxJsCodeService {
   rxjsCodeList: { [key in Rxjscodeexample]: string } = {
@@ -81,7 +81,7 @@ export class RxJsCodeService {
         tap(item => console.log(item)),
         take(2)
       ).subscribe(console.log);
-    `,
+    `
   };
 
   getCodeByKey(key: Rxjscodeexample): string {

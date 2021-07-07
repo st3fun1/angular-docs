@@ -8,9 +8,8 @@ describe('CombiningStreamsExampleComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CombiningStreamsExampleComponent ]
-    })
-    .compileComponents();
+      declarations: [CombiningStreamsExampleComponent]
+    }).compileComponents();
   });
 
   beforeEach(() => {

@@ -1,0 +1,17 @@
+:host {
+  .container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+    .mat-nav-list {
+      width: 50%;
+      ::ng-deep {
+        .mat-list-text {
+          text-align: center;
+        }
+      }
+    }
+  }
+}

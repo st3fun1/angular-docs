@@ -4,25 +4,25 @@ import Link from '../../shared/interfaces/Link';
 @Component({
   selector: 'app-rx-js',
   templateUrl: './rx-js.component.html',
-  styleUrls: ['./rx-js.component.scss'],
+  styleUrls: ['./rx-js.component.scss']
 })
 export class RxJSComponent implements OnInit {
   links: Link[] = [
     {
       href: 'intro',
       name: 'Intro',
-      child: true,
+      child: true
     },
     {
       href: 'terms-and-syntax',
       name: 'Terms and Syntax',
-      child: true,
+      child: true
     },
     {
       href: 'demo',
       name: 'Demo',
-      child: true,
-    },
+      child: true
+    }
   ];
 
   constructor() {}

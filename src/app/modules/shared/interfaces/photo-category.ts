@@ -1,4 +1,4 @@
 export interface PhotoCategory {
-    categoryName: string;
-    categoryId: number;
+  categoryName: string;
+  categoryId: number;
 }

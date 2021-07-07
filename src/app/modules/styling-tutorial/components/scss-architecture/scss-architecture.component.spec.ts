@@ -8,9 +8,8 @@ describe('ScssArchitectureComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ScssArchitectureComponent ]
-    })
-    .compileComponents();
+      declarations: [ScssArchitectureComponent]
+    }).compileComponents();
   });
 
   beforeEach(() => {

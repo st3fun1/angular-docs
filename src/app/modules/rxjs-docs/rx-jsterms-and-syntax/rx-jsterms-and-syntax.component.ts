@@ -7,7 +7,7 @@ import { Rxjscodeexample } from '../../shared/interfaces/rxjscodeexample.enum';
 @Component({
   selector: 'app-rx-jsterms-and-syntax',
   templateUrl: './rx-jsterms-and-syntax.component.html',
-  styleUrls: ['./rx-jsterms-and-syntax.component.scss'],
+  styleUrls: ['./rx-jsterms-and-syntax.component.scss']
 })
 export class RxJSTermsAndSyntaxComponent implements OnInit {
   response: HighlightResult = {};
@@ -15,33 +15,33 @@ export class RxJSTermsAndSyntaxComponent implements OnInit {
     {
       isOpen: true,
       title: 'Observer/Subscriber',
-      key: Rxjscodeexample.OBSERVER,
+      key: Rxjscodeexample.OBSERVER
     },
     {
       isOpen: false,
       title: 'Observable stream',
-      key: Rxjscodeexample.OBSERVABLE_STREAM,
+      key: Rxjscodeexample.OBSERVABLE_STREAM
     },
     {
       isOpen: false,
       title: 'Subscription',
-      key: Rxjscodeexample.SUBSCRIPTION,
+      key: Rxjscodeexample.SUBSCRIPTION
     },
     {
       isOpen: false,
       title: 'Stop a subscription',
-      key: Rxjscodeexample.UNSUBSCRIBE,
+      key: Rxjscodeexample.UNSUBSCRIBE
     },
     {
       isOpen: false,
       title: 'Creation Functions',
-      key: Rxjscodeexample.CREATION_FN,
+      key: Rxjscodeexample.CREATION_FN
     },
     {
       isOpen: false,
       title: 'RxJS Operators',
-      key: Rxjscodeexample.OPERATORS,
-    },
+      key: Rxjscodeexample.OPERATORS
+    }
   ];
 
   currentRxJsCode: string | null = null;
@@ -49,17 +49,13 @@ export class RxJSTermsAndSyntaxComponent implements OnInit {
   constructor(private rxjsCodeService: RxJsCodeService) {}
 
   ngOnInit(): void {
-    this.currentRxJsCode = this.rxjsCodeService.getCodeByKey(
-      Rxjscodeexample.OBSERVER
-    );
+    this.currentRxJsCode = this.rxjsCodeService.getCodeByKey(Rxjscodeexample.OBSERVER);
   }
 
   setPanelState(index: number, isOpen: boolean): void {
     this.panelList[index].isOpen = isOpen;
     if (this.panelList[index].isOpen) {
-      this.currentRxJsCode = this.rxjsCodeService.getCodeByKey(
-        this.panelList[index].key
-      );
+      this.currentRxJsCode = this.rxjsCodeService.getCodeByKey(this.panelList[index].key);
     }
 
     if (!this.panelList.find((panel) => panel.isOpen)) {
@@ -77,7 +73,7 @@ export class RxJSTermsAndSyntaxComponent implements OnInit {
       relevance: e.relevance,
       second_best: '{...}',
       top: '{...}',
-      value: '{...}',
+      value: '{...}'
     };
   }
 }

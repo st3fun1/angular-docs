@@ -22,48 +22,48 @@ const routes: Routes = [
       {
         path: 'intro',
         component: RxJSIntroComponent,
-        outlet: rxJSRouteOutlet,
+        outlet: rxJSRouteOutlet
       },
       {
         path: 'terms-and-syntax',
         component: RxJSTermsAndSyntaxComponent,
-        outlet: rxJSRouteOutlet,
+        outlet: rxJSRouteOutlet
       },
       {
         path: 'demo',
         component: DemoExamplesComponent,
-        outlet: rxJSRouteOutlet,
-      },
-    ],
+        outlet: rxJSRouteOutlet
+      }
+    ]
   },
   {
     path: 'going-reactive',
-    component: GoingReactiveComponent,
+    component: GoingReactiveComponent
   },
   {
     path: 'going-reactive/data-retrieval-example',
-    component: DataRetrievalExampleComponent,
+    component: DataRetrievalExampleComponent
   },
   {
     path: 'going-reactive/data-retrieval-example/photo/:photoId',
-    component: PhotoDetailComponent,
+    component: PhotoDetailComponent
   },
   {
     path: 'going-reactive/combining-stream',
-    component: CombiningStreamsExampleComponent,
+    component: CombiningStreamsExampleComponent
   },
   {
     path: 'going-reactive/higher-order-observables',
-    component: HigherOrderObservablesExampleComponent,
+    component: HigherOrderObservablesExampleComponent
   },
   {
     path: 'going-reactive/data-retrieval-example/add/photo',
-    component: AddPhotoComponent,
-  },
+    component: AddPhotoComponent
+  }
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule],
+  exports: [RouterModule]
 })
 export class RxjsDocRoutingModule {}

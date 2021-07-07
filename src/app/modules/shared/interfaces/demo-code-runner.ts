@@ -1,3 +1,1 @@
-export interface DemoCodeRunner {
-    
-}
+export interface DemoCodeRunner {}

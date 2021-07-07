@@ -8,9 +8,8 @@ describe('RxJSIntroComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ RxJSIntroComponent ]
-    })
-    .compileComponents();
+      declarations: [RxJSIntroComponent]
+    }).compileComponents();
   });
 
   beforeEach(() => {

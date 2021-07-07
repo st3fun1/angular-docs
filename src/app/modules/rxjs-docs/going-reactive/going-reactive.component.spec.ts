@@ -8,9 +8,8 @@ describe('GoingReactiveComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ GoingReactiveComponent ]
-    })
-    .compileComponents();
+      declarations: [GoingReactiveComponent]
+    }).compileComponents();
   });
 
   beforeEach(() => {

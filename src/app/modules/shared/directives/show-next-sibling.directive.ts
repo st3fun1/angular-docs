@@ -14,7 +14,5 @@ export class ShowNextSiblingDirective {
     return this._isActive;
   }
 
-  constructor(
-  ) { }
-
+  constructor() {}
 }

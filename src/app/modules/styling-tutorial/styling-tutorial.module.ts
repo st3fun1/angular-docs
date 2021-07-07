@@ -13,8 +13,8 @@ import { ScssArchitectureComponent } from './components/scss-architecture/scss-a
     WebComponentsComponent,
     ViewEncapsulationTutorialComponent,
     EmulatedCssSelectorsComponent,
-    ScssArchitectureComponent,
+    ScssArchitectureComponent
   ],
-  imports: [CommonModule, StylingTUtorialRouterModule, SharedModule],
+  imports: [CommonModule, StylingTUtorialRouterModule, SharedModule]
 })
 export class StylingTutorialModule {}

@@ -6,14 +6,14 @@ import { Subject } from 'rxjs';
 })
 export class LogServiceService {
   logSubject$: Subject<string> = new Subject();
-  constructor() { }
+  constructor() {}
 
   unsubscribeFromLogSubject() {
     this.logSubject$.unsubscribe();
   }
 
-  sendData(data: string)  {
-      console.log(`Log Service: \n ${data}`)
-      this.logSubject$.next(data);
+  sendData(data: string) {
+    console.log(`Log Service: \n ${data}`);
+    this.logSubject$.next(data);
   }
 }

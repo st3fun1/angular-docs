@@ -8,9 +8,8 @@ describe('HigherOrderObservablesExampleComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ HigherOrderObservablesExampleComponent ]
-    })
-    .compileComponents();
+      declarations: [HigherOrderObservablesExampleComponent]
+    }).compileComponents();
   });
 
   beforeEach(() => {

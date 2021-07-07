@@ -3,22 +3,34 @@ import Link from '../../shared/interfaces/Link';
 @Component({
   selector: 'app-navigation-bar',
   templateUrl: './navigation-bar.component.html',
-  styleUrls: ['./navigation-bar.component.scss'],
+  styleUrls: ['./navigation-bar.component.scss']
 })
 export class NavigationBarComponent implements OnInit {
   links: Link[] = [
     {
       href: '/home',
-      name: 'Home',
+      name: 'Home'
     },
     {
       href: '/rxjs/main',
-      name: 'RxJS',
+      name: 'RxJS'
     },
     {
       href: '/styling-tutorial',
-      name: 'Styling',
+      name: 'Styling'
     },
+    {
+      href: '/basics',
+      name: 'Basics'
+    },
+    {
+      href: '/js',
+      name: 'Javascript'
+    },
+    {
+      href: '/algorithms',
+      name: 'Algorithms'
+    }
   ];
 
   constructor() {}

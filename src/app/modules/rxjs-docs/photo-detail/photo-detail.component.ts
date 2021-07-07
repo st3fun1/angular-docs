@@ -7,15 +7,12 @@ import { Photo } from '../../shared/interfaces/photo';
 @Component({
   selector: 'app-photo-detail',
   templateUrl: './photo-detail.component.html',
-  styleUrls: ['./photo-detail.component.scss'],
+  styleUrls: ['./photo-detail.component.scss']
 })
 export class PhotoDetailComponent implements OnInit {
   public currentPhoto?: Photo;
 
-  constructor(
-    private activatedRoute: ActivatedRoute,
-    private fakeApiService: FakeApiService
-  ) {}
+  constructor(private activatedRoute: ActivatedRoute, private fakeApiService: FakeApiService) {}
 
   ngOnInit(): void {
     this.activatedRoute.params

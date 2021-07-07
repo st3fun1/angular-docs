@@ -7,7 +7,7 @@ import { Post } from '../post';
 import { LogServiceService } from './log-service.service';
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
 export class HigherorderobservablesdemorepoService {
   apiUrl = 'https://jsonplaceholder.typicode.com/posts';
@@ -29,24 +29,21 @@ export class HigherorderobservablesdemorepoService {
     switchMap((id) => this.getPostsById(id))
   );
 
-  constructor(
-    private logService: LogServiceService,
-    private httpService: HttpClient
-  ) {}
+  constructor(private logService: LogServiceService, private httpService: HttpClient) {}
 
   demos: { [key in HigherOrderObservablesDemoName]: { fn: Function } } = {
     [HigherOrderObservablesDemoName.GENERIC]: {
-      fn: this.runGenericCode.bind(this),
+      fn: this.runGenericCode.bind(this)
     },
     [HigherOrderObservablesDemoName.CONCAT_MAP]: {
-      fn: this.runConcatMapExample.bind(this),
+      fn: this.runConcatMapExample.bind(this)
     },
     [HigherOrderObservablesDemoName.MERGE_MAP]: {
-      fn: this.runMergeMapExample.bind(this),
+      fn: this.runMergeMapExample.bind(this)
     },
     [HigherOrderObservablesDemoName.SWITCH_MAP]: {
-      fn: this.runSwitchMapExample.bind(this),
-    },
+      fn: this.runSwitchMapExample.bind(this)
+    }
   };
 
   private runGenericCode() {
@@ -56,9 +53,7 @@ export class HigherorderobservablesdemorepoService {
       this.logService.sendData(`Outer observable: ${data}`);
       data.subscribe((data) => {
         console.log('Inner observable: ', data);
-        this.logService.sendData(
-          `Inner Observable: ${JSON.stringify(data, null, 3)}`
-        );
+        this.logService.sendData(`Inner Observable: ${JSON.stringify(data, null, 3)}`);
       });
     });
   }

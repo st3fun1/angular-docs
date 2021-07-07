@@ -8,9 +8,8 @@ describe('EmulatedCssSelectorsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ EmulatedCssSelectorsComponent ]
-    })
-    .compileComponents();
+      declarations: [EmulatedCssSelectorsComponent]
+    }).compileComponents();
   });
 
   beforeEach(() => {

@@ -8,10 +8,7 @@ import { LayoutModule } from './modules/layout/layout.module';
 import { RouterModule } from '@angular/router';
 import { SharedModule } from './modules/shared/shared.module';
 import { HttpClientModule } from '@angular/common/http';
-import {
-  BrowserAnimationsModule,
-  NoopAnimationsModule,
-} from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { RxjsDocModule } from './modules/rxjs-docs/rxjs-docs.module';
 
 @NgModule({
@@ -27,9 +24,9 @@ import { RxjsDocModule } from './modules/rxjs-docs/rxjs-docs.module';
     LayoutModule,
     RouterModule,
     SharedModule,
-    RxjsDocModule,
+    RxjsDocModule
   ],
 
-  bootstrap: [AppComponent],
+  bootstrap: [AppComponent]
 })
 export class AppModule {}

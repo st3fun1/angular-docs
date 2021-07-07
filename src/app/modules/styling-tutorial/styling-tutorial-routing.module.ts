@@ -9,24 +9,24 @@ import ROUTE_PATHS from './routePaths';
 const routes: Routes = [
   {
     path: ROUTE_PATHS.STYLING_INTRO,
-    component: StylingIntroComponent,
+    component: StylingIntroComponent
   },
   {
     path: ROUTE_PATHS.WEB_COMPONENTS,
-    component: WebComponentsComponent,
+    component: WebComponentsComponent
   },
   {
     path: ROUTE_PATHS.VIEW_ENCAPSULATION,
-    component: ViewEncapsulationTutorialComponent,
+    component: ViewEncapsulationTutorialComponent
   },
   {
     path: ROUTE_PATHS.EMULATED_CSS_SELECTORS,
-    component: EmulatedCssSelectorsComponent,
-  },
+    component: EmulatedCssSelectorsComponent
+  }
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule],
+  exports: [RouterModule]
 })
 export class StylingTUtorialRouterModule {}

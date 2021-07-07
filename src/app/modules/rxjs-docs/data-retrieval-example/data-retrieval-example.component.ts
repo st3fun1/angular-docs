@@ -9,7 +9,7 @@ import { Photo } from '../../shared/interfaces/photo';
   selector: 'app-data-retrieval-example',
   templateUrl: './data-retrieval-example.component.html',
   styleUrls: ['./data-retrieval-example.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class DataRetrievalExampleComponent implements OnInit {
   private categorySelectedSubject = new BehaviorSubject<number | string>('');
@@ -23,7 +23,7 @@ export class DataRetrievalExampleComponent implements OnInit {
     // data stream
     this.fakeApiService.photosWithAdd$,
     // action stream
-    this.categorySelectedAction$,
+    this.categorySelectedAction$
   ]).pipe(
     catchError((error) => {
       this.errorMessageSubject.next(error);
@@ -44,12 +44,7 @@ export class DataRetrievalExampleComponent implements OnInit {
   }
 
   showBigImage(photo: Photo) {
-    this.router.navigate([
-      'going-reactive',
-      'data-retrieval-example',
-      'photo',
-      photo.id,
-    ]);
+    this.router.navigate(['going-reactive', 'data-retrieval-example', 'photo', photo.id]);
   }
 
   handleCategoryChange(event: any) {
@@ -57,12 +52,7 @@ export class DataRetrievalExampleComponent implements OnInit {
   }
 
   handleAddPhoto() {
-    this.router.navigate([
-      'going-reactive',
-      'data-retrieval-example',
-      'add',
-      'photo',
-    ]);
+    this.router.navigate(['going-reactive', 'data-retrieval-example', 'add', 'photo']);
   }
 
   addNewItemInline() {
