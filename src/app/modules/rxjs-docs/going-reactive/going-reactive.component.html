@@ -7,10 +7,7 @@
     <li>
       <h3 with-bold-text show-next-sibling><strong>async </strong>pipe</h3>
       <div class="section-details">
-        <p>
-          when a new item is emitted, the component is marked to be checked for
-          changes
-        </p>
+        <p>when a new item is emitted, the component is marked to be checked for changes</p>
       </div>
     </li>
     <li>
@@ -18,20 +15,13 @@
       <div class="section-details">
         <p>There are two techniques: catch and replace or catch and rethrow.</p>
         <p><strong>.catchError(this.handleError)</strong> operator</p>
-        <p>
-          Used for catching errors and rethrowing errors or replace the errored
-          Observable to continue
-        </p>
+        <p>Used for catching errors and rethrowing errors or replace the errored Observable to continue</p>
       </div>
     </li>
     <li>
-      <h3 with-bold-text show-next-sibling>
-        <strong>.throwError</strong> creation function
-      </h3>
+      <h3 with-bold-text show-next-sibling><strong>.throwError</strong> creation function</h3>
       <div class="section-details">
-        <p>
-          Creates an Observable of never, emits no value and never completes
-        </p>
+        <p>Creates an Observable of never, emits no value and never completes</p>
         <p>used for intermediary error handling</p>
         <p>Immediately emits an error notification</p>
       </div>
@@ -47,9 +37,8 @@
       <h3 with-bold-text show-next-sibling>Improving Change Detection</h3>
       <div class="section-details">
         <p>
-          Angular uses <strong>change detection</strong> to track changes to
-          application data structures, so it knows when to update the UI with
-          changed data.
+          Angular uses <strong>change detection</strong> to track changes to application data structures, so it knows when to update the UI with changed
+          data.
         </p>
         <h4>Change Detection Strategies</h4>
         <ul>
@@ -94,8 +83,7 @@
           <li>Combine streams(merge or concat) to a single stream</li>
           <li>It can flatten a higher-order Observables(mergeAll)</li>
           <li>
-            It can emit a combined value(combineLatest, forkJoin,
-            withLatestFrom)
+            It can emit a combined value(combineLatest, forkJoin, withLatestFrom)
             <ul>
               <li>
                 <h5>combineLatest combination creation function</h5>
@@ -106,16 +94,10 @@
                 <p><code>combineLatest([a$, b$, c$]</code></p>
                 <p>It is a static creation fn</p>
                 <p>It takes the latest value from each stream</p>
-                <p>
-                  Emitted value combines the latest emitted value from each
-                  input stream into an array
-                </p>
+                <p>Emitted value combines the latest emitted value from each input stream into an array</p>
                 <h6>Example 2</h6>
                 <p><code>combineLatest([data$, action$]</code></p>
-                <p>
-                  Emits after both streams have emitted then emits each time
-                  after the action stream emits
-                </p>
+                <p>Emits after both streams have emitted then emits each time after the action stream emits</p>
                 <mat-divider></mat-divider>
                 <h5>Used for</h5>
                 <ul>
@@ -124,32 +106,21 @@
               </li>
               <li>
                 <h5>forkjoin</h5>
-                <p>
-                  Creates an Observable using the <strong>last</strong> value
-                  from each inputObservable
-                </p>
+                <p>Creates an Observable using the <strong>last</strong> value from each inputObservable</p>
                 <p>
                   <code>forkJoin([$a, $b, $c])</code>
                 </p>
-                <p>
-                  When all input streams complete emits the value to the output
-                  stream and complets
-                </p>
-                <p>
-                  Each emitted values from each stream is combined into an array
-                </p>
+                <p>When all input streams complete emits the value to the output stream and complets</p>
+                <p>Each emitted values from each stream is combined into an array</p>
                 <mat-divider></mat-divider>
                 <h5>Used for</h5>
-                <p>
-                  To wait to process any results until all streams are complete
-                </p>
+                <p>To wait to process any results until all streams are complete</p>
                 <p>Shouldn't be used with streams that don't complete</p>
               </li>
               <li>
                 <h5>withLatestFrom</h5>
                 <p>
-                  Creates an Observalbe whose values are defined using the
-                  latest values from each input Onbservable but only when the
+                  Creates an Observalbe whose values are defined using the latest values from each input Onbservable but only when the
                   <strong> source </strong> stream emits.
                 </p>
                 <p><code>$a.pipe(withLatestFrom($b, c$))</code></p>
@@ -175,23 +146,11 @@
         <p>Action stream - emits everytime an item is available</p>
         <h4>Reacting to actions</h4>
         <p>A <strong>Subject</strong> is both an Observable and Observer</p>
-        <p>
-          An Observable is <strong>unicast</strong> = each observer gets a copy
-          of the observable stream
-        </p>
-        <p>
-          A Subject is <strong>multicast</strong> = all observers shares the
-          same stream
-        </p>
-        <p>
-          An action stream can be created by using a Subjecte/BehaviorSubject or
-          built-in stream like onChanges(from forms) or fromEvent
-        </p>
+        <p>An Observable is <strong>unicast</strong> = each observer gets a copy of the observable stream</p>
+        <p>A Subject is <strong>multicast</strong> = all observers shares the same stream</p>
+        <p>An action stream can be created by using a Subjecte/BehaviorSubject or built-in stream like onChanges(from forms) or fromEvent</p>
         <p>Step two is to combine the action stream with the data stream</p>
-        <p>
-          Last step is to emit a value to the action stream when an action
-          occurs
-        </p>
+        <p>Last step is to emit a value to the action stream when an action occurs</p>
       </div>
     </li>
     <li>
@@ -201,14 +160,8 @@
         <p>Combines multiple streams by merging their emissions</p>
         <p><code>merge(a$, b$, c$)</code></p>
         <p>Is a static creation fn, not a pipeable operator</p>
-        <p>
-          Used for combining dequences of similar types to blend their emitted
-          values
-        </p>
-        <p>
-          combination creation function, when an item is emitted from any stream
-          is emitted to output stream
-        </p>
+        <p>Used for combining dequences of similar types to blend their emitted values</p>
+        <p>combination creation function, when an item is emitted from any stream is emitted to output stream</p>
         <h4 with-bold-text>scan</h4>
         <p>Accumulates items in a stream</p>
         <p><code>scan((acc, curr) => acc + curr)</code></p>
@@ -223,18 +176,12 @@
         <p>With caching you can reuse previously retrieved data</p>
         <p>Cache can be stored in memory at runtime or external</p>
         <h4>Why Caching?</h4>
-        <p>
-          Improves responsiveness - cached data doesn't require for example a
-          new http req
-        </p>
+        <p>Improves responsiveness - cached data doesn't require for example a new http req</p>
         <p>Caching reduces bandwidth and network consumption</p>
         <p>It reduces backend server load</p>
         <p>Reduces redundant/repetitive computations</p>
         <h4>Caching Patterns</h4>
-        <p>
-          Define a property in the service which will store the results, if the
-          property is empty issue a new http request to get data
-        </p>
+        <p>Define a property in the service which will store the results, if the property is empty issue a new http request to get data</p>
         <p>or declarative <strong>shareReplay</strong></p>
         <h5>shareReplay</h5>
         <p>Shares the stream with other subscribers</p>
@@ -242,19 +189,10 @@
         <p>shareReplay(1) - it replays the last emission</p>
         <p>Used for caching data in the app</p>
         <p>Is a multicast operator</p>
-        <p>
-          Returns a Subject that shares a single subscription to the underlying
-          source
-        </p>
-        <p>
-          It takes in an optional buffer size, which is the number of items
-          cached and replayed
-        </p>
+        <p>Returns a Subject that shares a single subscription to the underlying source</p>
+        <p>It takes in an optional buffer size, which is the number of items cached and replayed</p>
         <p>On a subscribe, it replays a specified number of emissions</p>
-        <p>
-          The items stays cached forever, even after there are no more
-          subscribers
-        </p>
+        <p>The items stays cached forever, even after there are no more subscribers</p>
         <h6>Cache Invalidation</h6>
         <p>for stale data that changes often, we don't need caching</p>
         <p>Cache invalidation time based</p>
@@ -271,59 +209,34 @@
         <p>Higher operator:</p>
         <ul>
           <li>have the following format <strong>xxxMap</strong></li>
-          <li>
-            Map each value from a source(outer) Observable to a new (inner)
-            Observable
-          </li>
-          <li>
-            They automatically subscribe/unsubscribe from inner Observables
-          </li>
+          <li>Map each value from a source(outer) Observable to a new (inner) Observable</li>
+          <li>They automatically subscribe/unsubscribe from inner Observables</li>
           <li>Emit the resulting values to the output Observable</li>
         </ul>
-        <h4 with-bold-text>
-          .concatMap - mapping operator used with a source Observable and pipe
-          method
-        </h4>
+        <h4 with-bold-text>.concatMap - mapping operator used with a source Observable and pipe method</h4>
         <p>higher order mapping + concatenation</p>
-        <p>
-          transforms each emitted item to a new(inner) Observable as defined by
-          a function
-        </p>
+        <p>transforms each emitted item to a new(inner) Observable as defined by a function</p>
         <p>
           <code>concatMap(i => of(i))</code>
         </p>
-        <p>
-          It waits for each inner Observable to complete before processing the
-          next one and so on
-        </p>
+        <p>It waits for each inner Observable to complete before processing the next one and so on</p>
         <p>When an item is emitted from input stream, it's queued</p>
         <p>Inner Observable emissions are concatenated to the output stream</p>
         <p>Used for:</p>
         <ul>
-          <li>
-            waiting for prior Observable to complete before starting the next
-            one
-          </li>
+          <li>waiting for prior Observable to complete before starting the next one</li>
           <li>processing items in sequence</li>
         </ul>
         <p>Examples:</p>
         <ul>
-          <li>
-            From a set of ids, get data in sequence; you need to display data in
-            order; top 10 hottest products
-          </li>
+          <li>From a set of ids, get data in sequence; you need to display data in order; top 10 hottest products</li>
           <li>From a set of ids, update data in sequence</li>
         </ul>
         <h4 with-bold-text>.mergeMap - mapping operator</h4>
         <p>Higher-order mapping + merging</p>
-        <p>
-          Transforms each emitted item to a new inner Observable as defined by a
-          function.
-        </p>
+        <p>Transforms each emitted item to a new inner Observable as defined by a function.</p>
         <p><code>mergeMap(i => of(i))</code></p>
-        <p with-bold-text>
-          It executes inner Observables in parallel and merges their results
-        </p>
+        <p with-bold-text>It executes inner Observables in parallel and merges their results</p>
         <p>transformation Operator</p>
         <p>Used for:</p>
         <ul>
@@ -336,23 +249,24 @@
         </ul>
         <h4 with-bold-text>.switchMap - mapping operator</h4>
         <p>Higher-order mapping + switching</p>
-        <p>
-          Transforms each emitted item to a new (inner) Observable as defined by
-          a function
-        </p>
+        <p>Transforms each emitted item to a new (inner) Observable as defined by a function</p>
         <p><code>switchMap(i => of(i))</code></p>
-        <p>
-          Stops the prior inner Observable and switches to the new inner
-          Observable
-        </p>
+        <p>Stops the prior inner Observable and switches to the new inner Observable</p>
         <p>User for:</p>
         <ul>
-          <li>
-            stopping any prior Observable before switching to the next one
-          </li>
+          <li>stopping any prior Observable before switching to the next one</li>
         </ul>
         <p>Example:</p>
         <p>Used for operations such as type ahead or auto completion</p>
+        <h4 with-bold-text>.exhaustMap - mapping operator</h4>
+        <p>Source items are ignored while the previous Observable is not completed</p>
+        <p>maps each value from the source observable into an inner observable, subscribes to it</p>
+        <p>it then statarts emitting the values from it replacing the origina value. It then waits for the inner observable to finish</p>
+        <p>
+          if it receives any new values befor ehte completion of the inner observable it ignores it. It receives a new value after completion of inner
+          observable, then it creates a new inner observable.
+        </p>
+        <p>The whole process repeates itself until the source observable is completed.</p>
       </div>
     </li>
     <li>
@@ -360,14 +274,9 @@
       <div class="section-details">
         <h4>Techniques for getting data</h4>
         <h5>Get it all</h5>
-        <p>
-          Gets all the related items within a dataset as needed for display.
-        </p>
+        <p>Gets all the related items within a dataset as needed for display.</p>
         <p>Example: <code>combileLatest(product$, suppliers$)</code></p>
-        <p>
-          Used only when: if the related dataset is of reasonable size and can
-          be cached(it is not used often)
-        </p>
+        <p>Used only when: if the related dataset is of reasonable size and can be cached(it is not used often)</p>
         <h5>Just in time</h5>
         <p>We retrieve just the related items when we need them</p>
         <p>Example: <code>mergeMap(...)</code></p>
@@ -379,12 +288,8 @@
   <div class="docs-examples">
     <h2>Examples</h2>
     <mat-list>
-      <a mat-list-item class="list-item" routerLink="data-retrieval-example">
-        Reactive Data Retrieval Example
-      </a>
-      <a mat-list-item class="list-item" routerLink="higher-order-observables">
-        Higher Order Observables Example
-      </a>
+      <a mat-list-item class="list-item" routerLink="data-retrieval-example"> Reactive Data Retrieval Example </a>
+      <a mat-list-item class="list-item" routerLink="higher-order-observables"> Higher Order Observables Example </a>
     </mat-list>
   </div>
 </div>

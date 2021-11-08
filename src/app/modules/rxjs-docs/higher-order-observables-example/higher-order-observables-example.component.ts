@@ -25,6 +25,10 @@ export class HigherOrderObservablesExampleComponent implements OnInit {
     {
       name: '.switchMap Example',
       option: HigherOrderObservablesDemoName.SWITCH_MAP
+    },
+    {
+      name: '.exhaustMap Example',
+      option: HigherOrderObservablesDemoName.EXHAUST_MAP
     }
   ];
 

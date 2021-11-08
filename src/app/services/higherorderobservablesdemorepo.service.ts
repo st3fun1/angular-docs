@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { of } from 'rxjs';
-import { concatMap, map, mergeMap, switchMap, tap } from 'rxjs/operators';
+import { concatMap, exhaustMap, map, mergeMap, switchMap, tap } from 'rxjs/operators';
 import { HigherOrderObservablesDemoName } from '../modules/shared/interfaces/higher-order-observables-demo-name.enum';
 import { Post } from '../post';
 import { LogServiceService } from './log-service.service';
@@ -15,18 +15,23 @@ export class HigherorderobservablesdemorepoService {
   getPreselectedPosts$ = of(1, 10, 20).pipe(map((id) => this.getPostsById(id)));
 
   getPreselectedPostsWithConcatMap$ = of(1, 10, 20).pipe(
-    tap((id) => this.logService.sendData(`concatMap source Obsersable: ${id}`)),
+    tap((id) => this.logService.sendData(`concatMap source Observable: ${id}`)),
     concatMap((id) => this.getPostsById(id))
   );
 
   getPreselectedPostsWithMergeMap$ = of(1, 10, 20).pipe(
-    tap((id) => this.logService.sendData(`mergeMap source Obsersable: ${id}`)),
+    tap((id) => this.logService.sendData(`mergeMap source Observable: ${id}`)),
     mergeMap((id) => this.getPostsById(id))
   );
 
   getPreselectedPostsWithSwitchMap$ = of(1, 10, 20).pipe(
-    tap((id) => this.logService.sendData(`switchMap source Obsersable: ${id}`)),
+    tap((id) => this.logService.sendData(`switchMap source Observable: ${id}`)),
     switchMap((id) => this.getPostsById(id))
+  );
+
+  getPreselectedPostsWithExhaustMap$ = of(1, 10, 20).pipe(
+    tap((id) => this.logService.sendData(`exhaustMap source Observable: ${id}`)),
+    exhaustMap((id) => this.getPostsById(id))
   );
 
   constructor(private logService: LogServiceService, private httpService: HttpClient) {}
@@ -43,6 +48,9 @@ export class HigherorderobservablesdemorepoService {
     },
     [HigherOrderObservablesDemoName.SWITCH_MAP]: {
       fn: this.runSwitchMapExample.bind(this)
+    },
+    [HigherOrderObservablesDemoName.EXHAUST_MAP]: {
+      fn: this.runExhaustMapExample.bind(this)
     }
   };
 
@@ -55,6 +63,13 @@ export class HigherorderobservablesdemorepoService {
         console.log('Inner observable: ', data);
         this.logService.sendData(`Inner Observable: ${JSON.stringify(data, null, 3)}`);
       });
+    });
+  }
+
+  private runExhaustMapExample() {
+    this.logService.sendData('Running exhaustMap example code');
+    this.getPreselectedPostsWithExhaustMap$.subscribe((data) => {
+      this.logService.sendData(`Find data: ${JSON.stringify(data, null, 3)}`);
     });
   }
 

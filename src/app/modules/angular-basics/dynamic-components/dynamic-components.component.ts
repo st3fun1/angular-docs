@@ -1,4 +1,4 @@
-import { AfterViewChecked, AfterViewInit, Component, ComponentFactoryResolver, OnInit, ViewChild } from '@angular/core';
+import { Component, ComponentFactoryResolver, OnInit, ViewChild } from '@angular/core';
 import { AppPlaceholderDirective } from './app-placeholder.directive';
 import { AlertComponent } from './../../common/alert/alert.component';
 
@@ -26,6 +26,8 @@ export class DynamicComponentsComponent implements OnInit {
 
     hostViewContainerRef.clear();
 
-    hostViewContainerRef.createComponent(alertCmpFactory);
+    const alertComponentRef = hostViewContainerRef.createComponent(alertCmpFactory);
+
+    alertComponentRef.instance.message = 'Testing Dynamic components alert';
   }
 }
