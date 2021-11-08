@@ -18,7 +18,8 @@ const routes: Routes = [
     loadChildren: () => import('../angular-basics/angular-basics.module').then((m) => m.AngularBasicsModule)
   },
   {
-    path: 'javascript'
+    path: 'javascript',
+    loadChildren: () => import('../javascript/javascript.module').then((m) => m.JavascriptModule)
   }
 ];
 

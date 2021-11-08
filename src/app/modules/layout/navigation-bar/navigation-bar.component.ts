@@ -24,12 +24,12 @@ export class NavigationBarComponent implements OnInit {
       name: 'Basics'
     },
     {
-      href: '/js',
-      name: 'Javascript'
-    },
-    {
       href: '/algorithms',
       name: 'Algorithms'
+    },
+    {
+      href: '/javascript',
+      name: 'Javascript'
     }
   ];
 

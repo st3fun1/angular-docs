@@ -1,0 +1,12 @@
+<h1>Dynamic Components</h1>
+<p>
+  <code>ng-template</code> element defines a template that is not rendered by default, you need to specifically instruct it to do so. One of the main uses
+  for this element is to hold template content that will be used by structural directives. When using the structural directive shorthand, Angular creates
+  an ng-template element behind the scens.
+</p>
+<p>
+  ng-template elements are represented as instances of the TemplateRef class. To add copies of the template to the dom, pass this object to the
+  ViewContaineRef method createEmbeddedView()
+</p>
+<ng-template appAppPlaceholder></ng-template>
+<button (click)="handleClick()">Show alert</button>

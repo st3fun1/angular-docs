@@ -8,11 +8,11 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
   links = [
     {
-      path: 'scope',
+      href: 'scope',
       name: 'Scope'
     },
     {
-      path: 'event-loop',
+      href: 'event-loop',
       name: 'Event Loop'
     }
   ];

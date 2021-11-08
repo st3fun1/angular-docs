@@ -1,0 +1,20 @@
+<h1>Event Loop</h1>
+
+<h2>Javascript is single-threaded</h2>
+<p>
+  JS can only run one task at a time, for long tasks this would be painful, because the UI will be blocked until the task is finished, luckily the browser
+  provides us some features that the JS engine itself doesn't provide: <strong>Web API</strong>. This inclues DOM API, setTimeout, HTTP request and so on.
+  This help us create some <strong> async, non-blocking behavior </strong>
+</p>
+
+<h2>What happens in an event-loop</h2>
+
+<h3>Step I</h3>
+<div class="image-container">
+  <img src="assets/images/event-loop-vizualized.gif" />
+</div>
+
+<h3>Step II</h3>
+<div class="image-container">
+  <img src="assets/images/event-loop-vizualized-2.gif" />
+</div>

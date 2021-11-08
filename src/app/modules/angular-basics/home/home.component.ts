@@ -23,6 +23,14 @@ export class HomeComponent implements OnInit {
     {
       href: 'change-detection',
       name: 'Change Detection'
+    },
+    {
+      href: 'template-elements',
+      name: 'ng-content, ng-container and *ngTemplateOutlet'
+    },
+    {
+      href: 'dynamic-components',
+      name: 'Dynamic Components'
     }
   ];
   constructor() {}
