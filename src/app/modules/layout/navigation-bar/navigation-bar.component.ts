@@ -30,6 +30,10 @@ export class NavigationBarComponent implements OnInit {
     {
       href: '/javascript',
       name: 'Javascript'
+    },
+    {
+      href: '/forms',
+      name: 'Forms'
     }
   ];
 

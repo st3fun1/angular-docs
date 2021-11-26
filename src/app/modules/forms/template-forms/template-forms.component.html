@@ -1,0 +1,60 @@
+<p>
+  Inside a template driven form the control elements are bound to data properties, with input validation to maintain data integrity<br />
+  and styling to improve the user experience.
+</p>
+<p>Template-driven forms are using two-way data binding to update the data model in the component as changes are made in the template and vice versa.</p>
+<p>Are suitable for small or simple forms</p>
+<p>Form control elements should be named with "name"</p>
+<p>Each for control can be tracked and you can see its states</p>
+<ul>
+  <li>
+    The control has been visited
+    <ul>
+      <li>class if true -> ng-touched</li>
+      <li>class if false -> ng-untouched</li>
+    </ul>
+  </li>
+  <li>
+    The control's value has changed
+    <ul>
+      <li>class if true -> ng-dirty</li>
+      <li>class if false -> ng-pristine</li>
+    </ul>
+  </li>
+  <li>
+    The control's value is valid
+    <ul>
+      <li>class if true -> ng-valid</li>
+      <li>class if false -> ng-invalid</li>
+    </ul>
+  </li>
+</ul>
+<p>
+  Angular can reference the input with a template reference variable, the value is ngModel because that is the value of NgModel.exportAs property. This
+  property tells Angular how to link a reference variable to a directive.
+</p>
+<div>
+  <form #heroForm="ngForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" #name="ngModel" class="form-control" id="name" required [(ngModel)]="model.name" name="name" />
+      <div [hidden]="name.valid || name.pristine" class="alert alert-danger">Name is required</div>
+    </div>
+
+    <div class="form-group">
+      <label for="alterEgo">Alter Ego</label>
+      <input type="text" class="form-control" id="alterEgo" [(ngModel)]="model.alterEgo" name="alterEgo" />
+    </div>
+
+    <div class="form-group">
+      <label for="power">Hero Power</label>
+      <select class="form-control" id="power" required [(ngModel)]="model.power" name="power">
+        <option *ngFor="let pow of powers" [value]="pow">{{ pow }}</option>
+      </select>
+    </div>
+  </form>
+  {{ heroForm.value | json }}
+
+  <button type="button" class="btn btn-default" (click)="newHero(); heroForm.reset()">New Hero</button>
+  <button type="submit" class="btn btn-success" [disabled]="!heroForm.form.valid">Submit</button>
+</div>

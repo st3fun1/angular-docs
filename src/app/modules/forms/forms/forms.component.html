@@ -1,0 +1,7 @@
+<h1>Forms</h1>
+
+<button (click)="handleClick()" mat-raised-button color="primary" out>{{ showTemplateForm ? 'Show Template Form' : 'Show Reactive Form' }}</button>
+<div class="form-container">
+  <app-template-forms *ngIf="!showTemplateForm"></app-template-forms>
+  <app-reactive-forms *ngIf="showTemplateForm"></app-reactive-forms>
+</div>

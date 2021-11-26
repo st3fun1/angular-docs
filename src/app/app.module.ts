@@ -3,13 +3,13 @@ import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './modules/routing/app-routing.module';
 import { AppComponent } from './app.component';
-import { ReactiveFormsModule } from '@angular/forms';
 import { LayoutModule } from './modules/layout/layout.module';
 import { RouterModule } from '@angular/router';
 import { SharedModule } from './modules/shared/shared.module';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { RxjsDocModule } from './modules/rxjs-docs/rxjs-docs.module';
+import { FormsRoutingModule } from './modules/forms/forms-routing.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -20,7 +20,6 @@ import { RxjsDocModule } from './modules/rxjs-docs/rxjs-docs.module';
     NoopAnimationsModule,
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule,
     LayoutModule,
     RouterModule,
     SharedModule,

@@ -1,0 +1,23 @@
+<p>Reactive forms provide a model-driven approach to handling form inputs whose values change over time.</p>
+<p>Each change to the form returns a new state, maintains integrity to the model between changes.</p>
+<p>Reactive forms are built around observable streams, where form inputs and values are provided as streams of input values, which can be accssed sync.</p>
+<p>The view reflects changes in the model, and the model reflects changes in the views</p>
+<div>
+  <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+    <label for="first-name">First Name: </label>
+    <input id="first-name" type="text" required formControlName="firstName" />
+
+    <label for="last-name">Last Name: </label>
+    <input id="last-name" type="text" formControlName="lastName" />
+  </form>
+  <p>Value: {{ profileForm.value | json }}</p>
+
+  <div *ngFor="let alias of aliases.controls; let i = index">
+    <!-- The repeated alias template -->
+    <label for="alias-{{ i }}">Alias:</label>
+    <input id="alias-{{ i }}" type="text" [formControlName]="i" />
+  </div>
+
+  <button (click)="updateName()">Update Name</button>
+  <button type="submit" [disabled]="!profileForm.valid">Submit</button>
+</div>

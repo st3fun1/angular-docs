@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+
 const routes: Routes = [
   {
     path: 'home',
@@ -20,6 +21,10 @@ const routes: Routes = [
   {
     path: 'javascript',
     loadChildren: () => import('../javascript/javascript.module').then((m) => m.JavascriptModule)
+  },
+  {
+    path: 'forms',
+    loadChildren: () => import('../forms/forms.module').then((m) => m.AppFormsModule)
   }
 ];
 

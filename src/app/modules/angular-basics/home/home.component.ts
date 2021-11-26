@@ -25,7 +25,7 @@ export class HomeComponent implements OnInit {
       name: 'Change Detection'
     },
     {
-      href: 'template-elements',
+      href: 'ng-template-outlet',
       name: 'ng-content, ng-container and *ngTemplateOutlet'
     },
     {
