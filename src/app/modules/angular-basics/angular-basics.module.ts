@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Injector, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { AngularBasicsRoutingModule } from './angular-basics-routing.module';
@@ -9,8 +9,19 @@ import { DynamicComponentsComponent } from './dynamic-components/dynamic-compone
 import { AppPlaceholderDirective } from './dynamic-components/app-placeholder.directive';
 import { CommonModule as AppCommonModule } from '../common/common.module';
 import { NgTemplateOutletComponent } from './ng-template-outlet/ng-template-outlet.component';
+import { AngularElementsComponent } from './angular-elements/angular-elements.component';
+import { DemoComponent } from './angular-elements/demo/demo.component';
 @NgModule({
-  declarations: [HomeComponent, TemplateElementsComponent, DynamicComponentsComponent, AppPlaceholderDirective, NgTemplateOutletComponent],
-  imports: [CommonModule, AngularBasicsRoutingModule, SharedModule, AppCommonModule]
+  declarations: [
+    HomeComponent,
+    TemplateElementsComponent,
+    DynamicComponentsComponent,
+    AppPlaceholderDirective,
+    NgTemplateOutletComponent,
+    AngularElementsComponent,
+    DemoComponent
+  ],
+  imports: [CommonModule, AngularBasicsRoutingModule, SharedModule, AppCommonModule],
+  exports: [DemoComponent]
 })
 export class AngularBasicsModule {}

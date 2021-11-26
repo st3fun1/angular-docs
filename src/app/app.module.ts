@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Injector } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './modules/routing/app-routing.module';
@@ -10,6 +10,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { RxjsDocModule } from './modules/rxjs-docs/rxjs-docs.module';
 import { FormsRoutingModule } from './modules/forms/forms-routing.module';
+import { createCustomElement } from '@angular/elements';
+import { DemoComponent } from './modules/rxjs-docs/demo/demo.component';
 
 @NgModule({
   declarations: [AppComponent],
@@ -24,8 +26,13 @@ import { FormsRoutingModule } from './modules/forms/forms-routing.module';
     RouterModule,
     SharedModule,
     RxjsDocModule
-  ],
-
-  bootstrap: [AppComponent]
+  ]
 })
-export class AppModule {}
+export class AppModule {
+  constructor(private injector: Injector) {}
+
+  ngDoBootstrap() {
+    const custom = createCustomElement(DemoComponent, { injector: this.injector });
+    customElements.define('app-hello-world', custom);
+  }
+}

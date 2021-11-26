@@ -31,6 +31,10 @@ export class HomeComponent implements OnInit {
     {
       href: 'dynamic-components',
       name: 'Dynamic Components'
+    },
+    {
+      href: 'angular-elements',
+      name: 'Angular Elements'
     }
   ];
   constructor() {}
