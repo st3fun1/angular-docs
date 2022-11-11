@@ -17,6 +17,13 @@ const routes: Routes = [
         (m) => m.StylingTutorialModule
       ),
   },
+  {
+    path: 'performance',
+    loadChildren: () =>
+      import('../performance/performance.module').then(
+        (m) => m.PerformanceModule
+      ),
+  },
 ];
 
 export default routes;

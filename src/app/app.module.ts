@@ -13,6 +13,7 @@ import {
   NoopAnimationsModule,
 } from '@angular/platform-browser/animations';
 import { RxjsDocModule } from './modules/rxjs-docs/rxjs-docs.module';
+import { PerformanceModule } from './modules/performance/performance.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -28,6 +29,7 @@ import { RxjsDocModule } from './modules/rxjs-docs/rxjs-docs.module';
     RouterModule,
     SharedModule,
     RxjsDocModule,
+    PerformanceModule,
   ],
 
   bootstrap: [AppComponent],

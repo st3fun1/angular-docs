@@ -1,0 +1,22 @@
+<div>
+  <mat-checkbox
+    class="example-margin"
+    [(ngModel)]="runWithWebWorker"
+    [checked]="runWithWebWorker"
+    >Run within a web worker</mat-checkbox
+  >
+</div>
+<mat-form-field>
+  <mat-label for="number">Number of seconds</mat-label>
+  <input
+    matInput
+    placeholder="Type a number"
+    type="number"
+    [ngModel]="value"
+    (ngModelChange)="modelChange($event)"
+  />
+</mat-form-field>
+
+<small *ngIf="isCalculating">Calculating...</small>
+<div *ngIf="result != null">{{ result }}...</div>
+<p>{{ message }}</p>

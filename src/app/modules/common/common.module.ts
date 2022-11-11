@@ -8,30 +8,24 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+
+const modules = [
+  MatExpansionModule,
+  MatDividerModule,
+  MatSelectModule,
+  MatTableModule,
+  MatButtonModule,
+  MatFormFieldModule,
+  MatInputModule,
+  MatListModule,
+  MatIconModule,
+  MatCheckboxModule,
+];
 
 @NgModule({
   declarations: [],
-  imports: [
-    MatExpansionModule,
-    MatDividerModule,
-    MatSelectModule,
-    MatTableModule,
-    MatButtonModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatListModule,
-    MatIconModule,
-  ],
-  exports: [
-    MatExpansionModule,
-    MatDividerModule,
-    MatSelectModule,
-    MatTableModule,
-    MatButtonModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatListModule,
-    MatIconModule,
-  ],
+  imports: [...modules],
+  exports: [...modules],
 })
 export class CommonModule {}

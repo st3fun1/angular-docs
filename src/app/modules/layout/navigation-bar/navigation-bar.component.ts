@@ -19,6 +19,10 @@ export class NavigationBarComponent implements OnInit {
       href: '/styling-tutorial',
       name: 'Styling',
     },
+    {
+      href: 'performance',
+      name: 'Performance',
+    },
   ];
 
   constructor() {}
