@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-add-photo',
@@ -7,7 +7,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./add-photo.component.scss'],
 })
 export class AddPhotoComponent implements OnInit {
-  photoForm: FormGroup = this.fb.group({
+  photoForm: UntypedFormGroup = this.fb.group({
     albumId: this.fb.control('', [
       Validators.required,
       Validators.min(1),
@@ -18,11 +18,11 @@ export class AddPhotoComponent implements OnInit {
     thumbnailUrl: this.fb.control('', [Validators.required]),
   });
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: UntypedFormBuilder) {}
 
   ngOnInit(): void {}
 
-  onSubmit(event: FormGroup) {
+  onSubmit(event: UntypedFormGroup) {
     console.log('a', event);
   }
 }
