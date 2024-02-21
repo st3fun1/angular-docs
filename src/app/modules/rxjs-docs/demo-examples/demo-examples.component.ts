@@ -25,6 +25,10 @@ export class DemoExamplesComponent implements OnInit {
       name: 'operators',
       option: CodeDemoName.OPERATORS,
     },
+    {
+      name: 'replaySubject',
+      option: CodeDemoName.REPLAY_SUBJECT,
+    },
   ];
 
   constructor(public codeDemoRepo: RxJSCodeDemoRepoService) {}

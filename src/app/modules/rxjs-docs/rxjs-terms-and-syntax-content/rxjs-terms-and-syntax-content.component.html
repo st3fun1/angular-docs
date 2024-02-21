@@ -1,121 +1,154 @@
 <ng-container [ngSwitch]="key">
-    <ng-container *ngSwitchCase="keys.OBSERVER">
-       <p>
-           <strong>
-            Observer
-           </strong> is an object that monitors a stream and responds to notifications represented as methods.   
-       </p>
-       <p>
-           It uses the following methods: .next(), .error(), .complete
-       </p>
-       <p>
-           An observer is a collection of callbacks that knows how to listen to values delivered by the Observable.
-       </p>
-       <p>
-         <strong>Subscriber</strong> is an observer which can unusbscribe from an Observable.
-       </p>
-    </ng-container>
-    <ng-container *ngSwitchCase="keys.OBSERVABLE_STREAM">
-       <p>
-           An Observable stream is any stream of data produced(emited) overtime:
-       </p>
-       <ul>
-            <li>Numbers</li>
-            <li>Streams</li>
-            <li>Events</li>
-            <li>Http Response</li>
-            <li>Other Observable streams</li>
-        </ul>
-       <p>
-           Observables can be sync or async
-       </p>
-       <p>
-            Can emit a finite or infinite number of data
-       </p>
-       <p>
-           Observables are lazy and doesn't emit any data, until you subscribe to the stream
-       </p>
-    </ng-container>
-    <ng-container *ngSwitchCase="keys.SUBSCRIPTION">
-        <p>To start start an Observable stream you must subscribe to it using <strong>.subscribe()</strong></p>
-        <p>When we subscribe we pass an onbserver to monitor a subscription.</p>
-        <p>As part of the subscription process, we tell the Observable how we gonna observe it.</p>
-        <p><strong>Observer</strong> - set  of callbacks to observe, handling next, error and complete</p>
-        <p><strong>Observable</strong> or stream is a sequence of emitted items</p>
-    </ng-container>
-    <ng-container *ngSwitchCase="keys.UNSUBSCRIBE">
-        <h3>
-            Ways to stop an Observable Stream
-        </h3>
-        <ul>
-            <li>
-                Call <strong>complete</strong>
-            </li>
-            <li>
-                User completing operator which unsubscribe
-            </li>
-            <li>
-                Throw an error
-            </li>
-            <li>
-                Calling <strong>.unsubscribe</strong> on subscription
-            </li>
-        </ul>
-        <h3>Why should we do this?</h3>
-        <p>Unsubscribing from each Observable prevents memory leaks</p>
-    </ng-container>
-    <ng-container *ngSwitchCase="keys.CREATION_FN">
-        <h3>Creating an Observable</h3>
-        <p>One of the following creation functions can be used</p>
-        <ul>
-            <li><strong>.of</strong></li>
-            <li><strong>.from</strong></li>
-            <li><strong>.fromEvent</strong> creates an Observable from any DOM event</li>
-            <li><strong>.interval</strong> creates an Observable that emits a seq number at a defined interval of time</li>
-        </ul>
-        <h4><strong>.of</strong> vs <strong>.from</strong></h4>
-        <p>Given an array of data, the stream behaves the following: </p>
-        <p>.from takes each element in the structure and emits it</p>
-        <p>.of emits all the items in the structure as a whole</p>
-    </ng-container>
-    <ng-container *ngSwitchCase="keys.OPERATORS">
-        <p>After emitting the items, they can pass through a set of operations.</p>
-        <p>The items are <strong>piped</strong> through a set of operators. You can use the <strong>.pipe</strong>Observable operator.</p>
-        <p>RxJS operator - function used to transform and manipulate items in an Observable stream.</p>
-        <p>Operators are applied in sequence using the Observable's pipe method.</p>
-        <p>Each operator takes an input Observable and ret urns an output Observable</p>
-        <h3>Operators list</h3>
-        <ul>
-            <li>
-                <h4>.map</h4>
-                <p>Transforms each emitted item. It's a transformat i on operat or</p>
-                <div><code>map(item => item * 2)</code></div>
-                <p>Used for making changes to each item in the source stream</p>
-                <mat-divider></mat-divider>
-            </li>
-            <li>
-                <h4>.tap</h4>
-                <p>Taps into a stream without modifying it. It is an utility operator.</p>
-                <p>It takes an input stream, subscribes to it and creates an output stream</p>
-                <div><code>tap(item => console.log(item))</code></div>
-                <p>Used for debugging or eprforming actions outside of the flow of data</p>
-            </li>
-            <li>
-                <h4>.take</h4>
-                <p>Emits a specified number of items. It is a filtering operator.</p>
-                <div><code>.take(2)</code></div>
-                <p>Used for taking a specified number of items and limiting unlimited streams</p>
-            </li>
-        </ul>
-        <h3>.map Operator Internals</h3>
-        <ul>
-            <li>It is a function</li>
-            <li>Takes an input stream</li>
-            <li>Creates an output stream via "Observable"</li>
-            <li>Subscribes to the input stream</li>
-            <li>Transforms item using provided "map" function and emits item</li>
-            <li>Emits error notification</li>
-            <li>Emits complete notification</li>
-        </ul>
-    </ng-container>
+  <ng-container *ngSwitchCase="keys.OBSERVER">
+    <p>
+      <strong> Observer </strong> is an object that monitors a stream and
+      responds to notifications represented as methods.
+    </p>
+    <p>It uses the following methods: .next(), .error(), .complete</p>
+    <p>
+      An observer is a collection of callbacks that knows how to listen to
+      values delivered by the Observable.
+    </p>
+    <p>
+      <strong>Subscriber</strong> is an observer which can unusbscribe from an
+      Observable.
+    </p>
+  </ng-container>
+  <ng-container *ngSwitchCase="keys.OBSERVABLE_STREAM">
+    <p>An Observable stream is any stream of data produced(emited) overtime:</p>
+    <ul>
+      <li>Numbers</li>
+      <li>Streams</li>
+      <li>Events</li>
+      <li>Http Response</li>
+      <li>Other Observable streams</li>
+    </ul>
+    <p>Observables can be sync or async</p>
+    <p>Can emit a finite or infinite number of data</p>
+    <p>
+      Observables are lazy and doesn't emit any data, until you subscribe to the
+      stream
+    </p>
+  </ng-container>
+  <ng-container *ngSwitchCase="keys.SUBSCRIPTION">
+    <p>
+      To start start an Observable stream you must subscribe to it using
+      <strong>.subscribe()</strong>
+    </p>
+    <p>When we subscribe we pass an onbserver to monitor a subscription.</p>
+    <p>
+      As part of the subscription process, we tell the Observable how we gonna
+      observe it.
+    </p>
+    <p>
+      <strong>Observer</strong> - set of callbacks to observe, handling next,
+      error and complete
+    </p>
+    <p><strong>Observable</strong> or stream is a sequence of emitted items</p>
+  </ng-container>
+  <ng-container *ngSwitchCase="keys.UNSUBSCRIBE">
+    <h3>Ways to stop an Observable Stream</h3>
+    <ul>
+      <li>Call <strong>complete</strong></li>
+      <li>User completing operator which unsubscribe</li>
+      <li>Throw an error</li>
+      <li>Calling <strong>.unsubscribe</strong> on subscription</li>
+    </ul>
+    <h3>Why should we do this?</h3>
+    <p>Unsubscribing from each Observable prevents memory leaks</p>
+  </ng-container>
+  <ng-container *ngSwitchCase="keys.CREATION_FN">
+    <h3>Creating an Observable</h3>
+    <p>One of the following creation functions can be used</p>
+    <ul>
+      <li><strong>.of</strong></li>
+      <li><strong>.from</strong></li>
+      <li>
+        <strong>.fromEvent</strong> creates an Observable from any DOM event
+      </li>
+      <li>
+        <strong>.interval</strong> creates an Observable that emits a seq number
+        at a defined interval of time
+      </li>
+    </ul>
+    <h4><strong>.of</strong> vs <strong>.from</strong></h4>
+    <p>Given an array of data, the stream behaves the following:</p>
+    <p>.from takes each element in the structure and emits it</p>
+    <p>.of emits all the items in the structure as a whole</p>
+  </ng-container>
+  <ng-container *ngSwitchCase="keys.OPERATORS">
+    <p>After emitting the items, they can pass through a set of operations.</p>
+    <p>
+      The items are <strong>piped</strong> through a set of operators. You can
+      use the <strong>.pipe</strong>Observable operator.
+    </p>
+    <p>
+      RxJS operator - function used to transform and manipulate items in an
+      Observable stream.
+    </p>
+    <p>Operators are applied in sequence using the Observable's pipe method.</p>
+    <p>
+      Each operator takes an input Observable and ret urns an output Observable
+    </p>
+    <h3>Operators list</h3>
+    <ul>
+      <li>
+        <h4>.map</h4>
+        <p>Transforms each emitted item. It's a transformat i on operat or</p>
+        <div><code>map(item => item * 2)</code></div>
+        <p>Used for making changes to each item in the source stream</p>
+        <mat-divider></mat-divider>
+      </li>
+      <li>
+        <h4>.tap</h4>
+        <p>
+          Taps into a stream without modifying it. It is an utility operator.
+        </p>
+        <p>
+          It takes an input stream, subscribes to it and creates an output
+          stream
+        </p>
+        <div><code>tap(item => console.log(item))</code></div>
+        <p>
+          Used for debugging or eprforming actions outside of the flow of data
+        </p>
+      </li>
+      <li>
+        <h4>.take</h4>
+        <p>Emits a specified number of items. It is a filtering operator.</p>
+        <div><code>.take(2)</code></div>
+        <p>
+          Used for taking a specified number of items and limiting unlimited
+          streams
+        </p>
+      </li>
+    </ul>
+    <h3>.map Operator Internals</h3>
+    <ul>
+      <li>It is a function</li>
+      <li>Takes an input stream</li>
+      <li>Creates an output stream via "Observable"</li>
+      <li>Subscribes to the input stream</li>
+      <li>Transforms item using provided "map" function and emits item</li>
+      <li>Emits error notification</li>
+      <li>Emits complete notification</li>
+    </ul>
+  </ng-container>
+  <ng-container *ngSwitchCase="keys.SUBJECTS">
+    <h3>Replay Subject</h3>
+    <p>
+      It <strong>replays</strong> old values to new subscribers when they first
+      subscribe.
+    </p>
+    <p>
+      Stores every value it emits in a buffer. The buffer can be configured
+      using the arguments <code>bufferSize</code>(no of items - default:
+      Infinity) and <code>windowTime</code>(amount of time - default: Infinity)
+    </p>
+    <h3>Async Subject</h3>
+    <p>Only emits the latest value only when it completes</p>
+    <p>
+      If it errors out then it will emit and error, but will not emit any values
+    </p>
+  </ng-container>
 </ng-container>

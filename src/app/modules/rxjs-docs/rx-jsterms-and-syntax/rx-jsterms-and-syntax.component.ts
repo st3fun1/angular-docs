@@ -42,6 +42,11 @@ export class RxJSTermsAndSyntaxComponent implements OnInit {
       title: 'RxJS Operators',
       key: Rxjscodeexample.OPERATORS,
     },
+    {
+      isOpen: false,
+      title: 'ReplaySubject, BehaviorSubject, AsyncSubject',
+      key: Rxjscodeexample.SUBJECTS,
+    },
   ];
 
   currentRxJsCode: string | null = null;

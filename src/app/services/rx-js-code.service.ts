@@ -82,6 +82,26 @@ export class RxJsCodeService {
         take(2)
       ).subscribe(console.log);
     `,
+    [Rxjscodeexample.SUBJECTS]: `
+      subject$ = new ReplaySubject();
+
+      ngOnInit() {
+        this.subject$.next('1');
+        this.subject$.next('2');
+
+        // outputs: '1', '2'
+        this.subject.subscribe(
+          val => console.log(val);
+        )
+
+        this.subject$.next('3');
+
+        // outputs: '1', '2', '3'
+        this.subject.subscribe(
+          val => console.log(val);
+        )
+      }
+    `,
   };
 
   getCodeByKey(key: Rxjscodeexample): string {

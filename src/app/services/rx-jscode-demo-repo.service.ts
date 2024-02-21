@@ -23,11 +23,16 @@ export class RxJSCodeDemoRepoService {
     [CodeDemoName.OPERATORS]: {
       fn: this.runOperators.bind(this),
     },
+    [CodeDemoName.REPLAY_SUBJECT]: {
+      fn: this.runReplaySubject.bind(this),
+    },
   };
 
   runDemoCode = (name: CodeDemoName) => {
     return this.demos[name].fn();
   };
+
+  runReplaySubject() {}
 
   runOfCode() {
     this.logService.sendData('Running `.of` code');
