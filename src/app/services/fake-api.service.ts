@@ -100,7 +100,7 @@ export class FakeApiService {
     this.photoInsertedAction$
   ).pipe(
     tap(console.log),
-    scan((acc: Photo[], value: Photo) => {
+    scan((acc, value) => {
       return [value, ...acc];
     })
   );

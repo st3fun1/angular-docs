@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { MatLegacySelectChange as MatSelectChange } from '@angular/material/legacy-select';
 import { LogServiceService } from '../../../services/log-service.service';
 import { CodeDemoOptions } from '../../shared/interfaces/code-demo';
+import { MatSelectChange } from '@angular/material/select';
 
 @Component({
   selector: 'app-demo',

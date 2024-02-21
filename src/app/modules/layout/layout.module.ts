@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { FooterComponent } from './footer/footer.component';
 import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
-import { MatLegacyListModule as MatListModule } from '@angular/material/legacy-list';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { AppToolsComponent } from './app-tools/app-tools.component';
 import { CommonModule as AppCommonModule } from '../common/common.module';
+import { MatListModule } from '@angular/material/list';
 
 @NgModule({
   declarations: [FooterComponent, NavigationBarComponent, AppToolsComponent],

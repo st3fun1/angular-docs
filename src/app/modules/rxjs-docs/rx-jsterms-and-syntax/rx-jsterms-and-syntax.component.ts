@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HighlightResult } from 'ngx-highlightjs';
+import { HighlightAutoResult } from 'ngx-highlightjs';
 import { RxJsCodeService } from '../../../services/rx-js-code.service';
 import { PanelItem } from '../../shared/interfaces/panel-item';
 import { Rxjscodeexample } from '../../shared/interfaces/rxjscodeexample.enum';
@@ -10,7 +10,7 @@ import { Rxjscodeexample } from '../../shared/interfaces/rxjscodeexample.enum';
   styleUrls: ['./rx-jsterms-and-syntax.component.scss'],
 })
 export class RxJSTermsAndSyntaxComponent implements OnInit {
-  response: HighlightResult = {};
+  response: HighlightAutoResult = {};
   panelList: PanelItem[] = [
     {
       isOpen: true,
@@ -76,12 +76,10 @@ export class RxJSTermsAndSyntaxComponent implements OnInit {
     return this.panelList[index];
   }
 
-  onHighlight(e: HighlightResult) {
+  onHighlight(e: HighlightAutoResult) {
     this.response = {
       language: e.language,
       relevance: e.relevance,
-      second_best: '{...}',
-      top: '{...}',
       value: '{...}',
     };
   }
