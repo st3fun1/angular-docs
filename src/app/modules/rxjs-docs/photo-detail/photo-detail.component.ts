@@ -5,9 +5,10 @@ import { FakeApiService } from '../../../services/fake-api.service';
 import { Photo } from '../../shared/interfaces/photo';
 
 @Component({
-  selector: 'app-photo-detail',
-  templateUrl: './photo-detail.component.html',
-  styleUrls: ['./photo-detail.component.scss'],
+    selector: 'app-photo-detail',
+    templateUrl: './photo-detail.component.html',
+    styleUrls: ['./photo-detail.component.scss'],
+    standalone: false
 })
 export class PhotoDetailComponent implements OnInit {
   public currentPhoto?: Photo;

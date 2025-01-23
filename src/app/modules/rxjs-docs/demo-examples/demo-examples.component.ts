@@ -3,9 +3,10 @@ import { RxJSCodeDemoRepoService } from '../../../services/rx-jscode-demo-repo.s
 import { CodeDemoOptions } from '../../shared/interfaces/code-demo';
 import { CodeDemoName } from '../../shared/interfaces/code-demo-name.enum';
 @Component({
-  selector: 'app-demo-examples',
-  templateUrl: './demo-examples.component.html',
-  styleUrls: ['./demo-examples.component.scss'],
+    selector: 'app-demo-examples',
+    templateUrl: './demo-examples.component.html',
+    styleUrls: ['./demo-examples.component.scss'],
+    standalone: false
 })
 export class DemoExamplesComponent implements OnInit {
   codeDemos: CodeDemoOptions[] = [

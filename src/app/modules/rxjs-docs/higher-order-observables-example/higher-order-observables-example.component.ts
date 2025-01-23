@@ -4,9 +4,10 @@ import { CodeDemoOptions } from '../../shared/interfaces/code-demo';
 import { HigherOrderObservablesDemoName } from '../../shared/interfaces/higher-order-observables-demo-name.enum';
 
 @Component({
-  selector: 'app-higher-order-observables-example',
-  templateUrl: './higher-order-observables-example.component.html',
-  styleUrls: ['./higher-order-observables-example.component.scss'],
+    selector: 'app-higher-order-observables-example',
+    templateUrl: './higher-order-observables-example.component.html',
+    styleUrls: ['./higher-order-observables-example.component.scss'],
+    standalone: false
 })
 export class HigherOrderObservablesExampleComponent implements OnInit {
   codeDemos: CodeDemoOptions[] = [

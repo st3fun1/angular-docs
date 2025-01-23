@@ -6,10 +6,11 @@ import { FakeApiService } from '../../../services/fake-api.service';
 import { Photo } from '../../shared/interfaces/photo';
 
 @Component({
-  selector: 'app-data-retrieval-example',
-  templateUrl: './data-retrieval-example.component.html',
-  styleUrls: ['./data-retrieval-example.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'app-data-retrieval-example',
+    templateUrl: './data-retrieval-example.component.html',
+    styleUrls: ['./data-retrieval-example.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class DataRetrievalExampleComponent implements OnInit {
   private categorySelectedSubject = new BehaviorSubject<number | string>('');

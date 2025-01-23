@@ -1,7 +1,8 @@
 import { Directive, ElementRef } from '@angular/core';
 
 @Directive({
-  selector: '[with-bold-text]'
+    selector: '[with-bold-text]',
+    standalone: false
 })
 export class WithBoldTextDirective {
   constructor(

@@ -8,9 +8,10 @@ declare global {
 }
 
 @Component({
-  selector: 'app-calculation',
-  templateUrl: './calculation.component.html',
-  styleUrls: ['./calculation.component.scss'],
+    selector: 'app-calculation',
+    templateUrl: './calculation.component.html',
+    styleUrls: ['./calculation.component.scss'],
+    standalone: false
 })
 export class CalculationComponent {
   private currentWorker!: Worker;

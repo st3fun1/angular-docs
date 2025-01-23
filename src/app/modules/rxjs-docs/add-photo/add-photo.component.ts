@@ -2,9 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'app-add-photo',
-  templateUrl: './add-photo.component.html',
-  styleUrls: ['./add-photo.component.scss'],
+    selector: 'app-add-photo',
+    templateUrl: './add-photo.component.html',
+    styleUrls: ['./add-photo.component.scss'],
+    standalone: false
 })
 export class AddPhotoComponent implements OnInit {
   photoForm: UntypedFormGroup = this.fb.group({

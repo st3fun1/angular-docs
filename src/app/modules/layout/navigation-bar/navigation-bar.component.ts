@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import Link from '../../shared/interfaces/Link';
 @Component({
-  selector: 'app-navigation-bar',
-  templateUrl: './navigation-bar.component.html',
-  styleUrls: ['./navigation-bar.component.scss'],
+    selector: 'app-navigation-bar',
+    templateUrl: './navigation-bar.component.html',
+    styleUrls: ['./navigation-bar.component.scss'],
+    standalone: false
 })
 export class NavigationBarComponent implements OnInit {
   links: Link[] = [

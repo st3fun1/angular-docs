@@ -5,9 +5,10 @@ import { PanelItem } from '../../shared/interfaces/panel-item';
 import { Rxjscodeexample } from '../../shared/interfaces/rxjscodeexample.enum';
 
 @Component({
-  selector: 'app-rx-jsterms-and-syntax',
-  templateUrl: './rx-jsterms-and-syntax.component.html',
-  styleUrls: ['./rx-jsterms-and-syntax.component.scss'],
+    selector: 'app-rx-jsterms-and-syntax',
+    templateUrl: './rx-jsterms-and-syntax.component.html',
+    styleUrls: ['./rx-jsterms-and-syntax.component.scss'],
+    standalone: false
 })
 export class RxJSTermsAndSyntaxComponent implements OnInit {
   response: HighlightAutoResult = {};

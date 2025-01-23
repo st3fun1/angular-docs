@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-emulated-css-selectors',
-  templateUrl: './emulated-css-selectors.component.html',
-  styleUrls: ['./emulated-css-selectors.component.scss'],
+    selector: 'app-emulated-css-selectors',
+    templateUrl: './emulated-css-selectors.component.html',
+    styleUrls: ['./emulated-css-selectors.component.scss'],
+    standalone: false
 })
 export class EmulatedCssSelectorsComponent implements OnInit {
   code = {

@@ -1,7 +1,8 @@
 import { Directive, HostBinding, HostListener } from '@angular/core';
 
 @Directive({
-  selector: '[show-next-sibling]'
+    selector: '[show-next-sibling]',
+    standalone: false
 })
 export class ShowNextSiblingDirective {
   _isActive = false;

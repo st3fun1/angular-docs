@@ -2,9 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import Link from '../../shared/interfaces/Link';
 
 @Component({
-  selector: 'app-rx-js',
-  templateUrl: './rx-js.component.html',
-  styleUrls: ['./rx-js.component.scss'],
+    selector: 'app-rx-js',
+    templateUrl: './rx-js.component.html',
+    styleUrls: ['./rx-js.component.scss'],
+    standalone: false
 })
 export class RxJSComponent implements OnInit {
   links: Link[] = [
