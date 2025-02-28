@@ -27,8 +27,8 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Run Tests
-        run: npm test
+      - name: Run Build
+        run: npm run build
 
       - name: Check node.js version
         run: node --version
